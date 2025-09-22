@@ -21,8 +21,8 @@
 
     </div>
     <div class="flex flex-row gap-4">
-      <button class="text-xl font-medium bg-cyan-800 text-white py-1 px-4 rounded-md">Star Free Trial</button>
-      <button class="text-xl font-medium bg-white text-black py-1 px-4 rounded-md border border-gray-400">Watch Demo</button>
+      <button class="text-xl font-normal bg-cyan-900 text-white py-1 px-4 rounded-md">Star Free Trial</button>
+      <button class="text-xl font-normal bg-white text-black py-1 px-4 rounded-md border border-gray-400">Watch Demo</button>
     </div>
   </div>
 </template>
