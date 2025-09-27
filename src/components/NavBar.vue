@@ -5,9 +5,13 @@
             <div><img src="../assets/radargov-high-resolution-logo.png" alt="" class="size-25"></div>
             <div class="text-cyan-900 text-2xl">RADARGOV</div>
         </div>
-        <div class="flex gap-8 font-normal text-gray-600">
+        <div class="flex gap-8 font-extrabold text-gray-600 text-2xl">
             <div>Dashboard</div>
-            <div>Oportunidades</div>
+            <div>
+                <router-link to="/oportunidades" class="cursor-pointer hover:text-gray-300">
+                    Oportunidades
+                </router-link>
+            </div>
             <div>Analytics</div>
             <div>Opções</div>
         </div>
