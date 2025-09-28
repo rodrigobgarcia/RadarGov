@@ -11,7 +11,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "pinia": "^3.0.3",
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/test-utils": "^2.4.6",
+    "gh-pages": "^6.3.0",
     "jsdom": "^26.1.0",
     "prettier": "3.6.2",
     "vite": "^7.0.6",
