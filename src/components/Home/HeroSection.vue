@@ -24,13 +24,12 @@
 
         </div>
         <div class="flex flex-row gap-4">
-            <BaseButton>
+            <BaseButton @click="scrollToSection('contato')">
                  Comece seu Teste Gratuito
             </BaseButton>
-            <BaseButton variant="outline">
+            <BaseButton variant="outline" @click="scrollToSection('planos')">
                 Conheça os planos
             </BaseButton>
-
         </div>
     </div>
     <div class="custom-shape-divider-bottom-1759069318">
@@ -42,8 +41,21 @@
 
 <script setup>
 import BaseButton from '../Button.vue'
+/**
+ * Função para rolar suavemente para uma seção específica da página.
+ * É a mesma função usada no seu Navbar e Footer.
+ * *NOTA: Esta função é necessária no script para que os botões funcionem.*
+ * @param {string} id O ID do elemento para onde rolar (ex: 'planos', 'contato').
+ */
+function scrollToSection(id) {
+    const element = document.getElementById(id)
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } else if (id === 'topo') {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+}
 </script>
-
 <style>
 .custom-shape-divider-bottom-1759069318 {
     position: absolute;

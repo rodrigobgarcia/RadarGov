@@ -1,5 +1,5 @@
 <template>
-    <section class="py-16 px-32">
+    <section class="py-16 px-32" id="vantagens">
         <div class="container mx-auto">
             <div class="text-center mb-12">
                 <h2 class="mb-4 text-4xl font-bold text-gray-600">Tudo que você precisa para <span
@@ -119,4 +119,28 @@
             </div>
         </div>
     </section>
+    
 </template>
+
+<style>
+.custom-shape-divider-bottom-1759082006 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1759082006 svg {
+    position: relative;
+    display: block;
+    width: calc(108% + 1.3px);
+    height: 107px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1759082006 .shape-fill {
+    fill: #FFFFFF;
+}
+</style>
