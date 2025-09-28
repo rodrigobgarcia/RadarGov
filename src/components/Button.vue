@@ -1,7 +1,7 @@
 <template>
   <button
     :class="[
-      'inline-flex items-center justify-center font-medium transition-colors duration-200 rounded-lg max-h-[34px] cursor-pointer',
+      'inline-flex items-center justify-center font-medium transition-colors duration-200 rounded-lg min-h-[34px] cursor-pointer',
       sizeClasses,
       variantClasses,
       fullWidth ? 'w-full' : ''
@@ -33,7 +33,6 @@ const props = defineProps({
   },
 })
 
-/* 🎨 ESTILOS DE VARIANTES */
 const variantClasses = computed(() => {
   switch (props.variant) {
     case 'secondary':

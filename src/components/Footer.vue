@@ -1,21 +1,18 @@
 <template>
   <footer
-    class="flex justify-center items-center w-full py-6 px-[20px] md:px-[100px] text-lg font-sans bg-[#e6eef9] text-gray-700"
+    class="flex justify-center items-center w-full py-6 px-4 sm:px-6 md:px-10 lg:px-[100px] text-lg font-sans bg-[#e6eef9] text-gray-700"
   >
-    <div class="flex justify-between items-center w-full max-w-[1200px] text-sm">
-
-      <div class="flex gap-2 flex-col">
-        <div class="flex items-center gap-2">
-          <!-- <span class="text-xl font-bold text-gray-900">RadarGov</span> -->
-          <img src="../assets/logo.png" alt="Logo RadarGov" class="h-8" />
-        </div>
-        
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-start w-full max-w-[1200px] text-sm gap-4 md:gap-0">
+      
+      <div class="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
+        <img src="../assets/logo.png" alt="Logo RadarGov" class="h-8" />
         <div class="text-gray-500 font-normal">
           {{ currentYear }} | Todos os direitos reservados
         </div>
       </div>
 
-      <div class="flex gap-10 font-medium">
+      <!-- LINKS -->
+      <div class="flex flex-wrap justify-center items-center md:justify-end gap-4 md:gap-10 font-medium text-center md:text-right">
         <a
           href="#topo"
           @click.prevent="scrollToSection('topo')"
@@ -48,6 +45,7 @@
     </div>
   </footer>
 </template>
+
 
 <script setup>
 import { computed } from 'vue'

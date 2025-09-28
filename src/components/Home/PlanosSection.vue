@@ -1,6 +1,6 @@
 <template>
     <section id="planos">
-        <div class="flex flex-col items-center w-full py-16 bg-[#F3F6FC] font-sans pb-32">
+        <div class="flex flex-col items-center w-full py-16 bg-[#F3F6FC] font-sans pb-24">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-extrabold text-gray-700 mb-3 md:text-4xl">
                     Encontre o Plano Certo para o Seu Negócio

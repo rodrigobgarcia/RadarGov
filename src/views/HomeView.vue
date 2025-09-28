@@ -11,9 +11,7 @@ import Footer from '@/components/Footer.vue';
 
 <template>
   <HeroSection/>
-  <div class="mt-[65px]">
-    <PlanosSection/>
-  </div>
+  <PlanosSection/>
   <MarqueeSection/>
   <VantagensSection/>
   <FormSection/>

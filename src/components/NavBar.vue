@@ -1,13 +1,17 @@
 <template>
   <div
-    class="flex justify-between items-center w-full fixed top-0 left-0 h-16 text-xl font-sans px-[100px] transition-colors duration-300 z-1000"
+    class="fixed top-0 left-0 w-full h-16 px-6 flex justify-between items-center text-xl font-sans transition-colors duration-300 z-50"
     :class="isScrolled ? 'bg-[#f3f6fc]/95 shadow-md' : 'bg-transparent'"
   >
     <div class="flex items-center gap-2 cursor-pointer" @click="scrollToSection('topo')">
       <img src="../assets/logo.png" alt="Logo RadarGov" class="h-10" />
     </div>
 
-    <div class="flex gap-8 text-gray-600 text-xl">
+    <button class="md:hidden text-gray-700 focus:outline-none" @click="toggleMobileMenu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+
+    <div class="hidden md:flex gap-8 text-gray-600 text-xl">
       <a
         href="#planos"
         @click.prevent="scrollToSection('planos')"
@@ -38,10 +42,24 @@
       </a>
     </div>
 
-    <div class="flex gap-8 items-center">
+    <div class="hidden md:flex gap-8 items-center">
       <BaseButton @click="scrollToSection('contato')">
         Comece já!
       </BaseButton>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div
+    v-if="showMobileMenu"
+    class="fixed top-16 left-0 w-full bg-[#f3f6fc]/95 shadow-md md:hidden z-40"
+  >
+    <div class="flex flex-col gap-4 py-4 px-6 text-gray-700 text-lg">
+      <a @click.prevent="handleMobileNav('planos')" class="hover:text-[#253b7f]">Planos</a>
+      <a @click.prevent="handleMobileNav('integracoes')" class="hover:text-[#253b7f]">Integrações</a>
+      <a @click.prevent="handleMobileNav('vantagens')" class="hover:text-[#253b7f]">Vantagens</a>
+      <a @click.prevent="handleMobileNav('contato')" class="hover:text-[#253b7f]">Contato</a>
+      <BaseButton @click="handleMobileNav('contato')">Comece já!</BaseButton>
     </div>
   </div>
 </template>
@@ -51,15 +69,12 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import BaseButton from './Button.vue'
 
 const isScrolled = ref(false)
+const showMobileMenu = ref(false)
 
 function handleScroll() {
   isScrolled.value = window.scrollY > 0
 }
 
-/**
- * Função para rolar suavemente para uma seção específica da página.
- * @param {string} id O ID do elemento para onde rolar (ex: 'planos', 'contato').
- */
 function scrollToSection(id) {
   const element = document.getElementById(id)
   if (element) {
@@ -69,9 +84,19 @@ function scrollToSection(id) {
   }
 }
 
+function toggleMobileMenu() {
+  showMobileMenu.value = !showMobileMenu.value
+}
+
+function handleMobileNav(id) {
+  scrollToSection(id)
+  showMobileMenu.value = false
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
+
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
 })
