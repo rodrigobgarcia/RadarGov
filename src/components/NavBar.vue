@@ -1,11 +1,10 @@
 <template>
-
-    <div class="flex justify-between items-center w-full fixed top-0 left-0 bg-[#e6eef9]/95 h-16 text-xl font-sans px-[40px]">
+    <div class="flex justify-between items-center w-full fixed top-0 left-0 h-16 text-xl font-sans px-[100px] transition-colors duration-300 z-1000"
+        :class="isScrolled ? 'bg-[#f3f6fc]/95 shadow-md' : 'bg-transparent'">
         <div class="flex items-center gap-2">
-            <!-- <div><img src="../assets/radargov-high-resolution-logo.png" alt="" class="size-25"></div>
-            <div class="text-cyan-900 text-2xl">RADARGOV</div> -->
-            <img src="../assets/logo.png" alt="Logo RadarGov" class="h-10">
+            <img src="../assets/logo.png" alt="Logo RadarGov" class="h-10" />
         </div>
+
         <div class="flex gap-8 text-gray-600 text-xl">
             <div>Dashboard</div>
             <div>
@@ -16,14 +15,31 @@
             <div>Analytics</div>
             <div>Opções</div>
         </div>
-        <div class="flex gap-8  items-center">
-            <div class="cursor-pointer hover:text-gray-300">
+
+        <div class="flex gap-8 items-center">
+            <!-- <div class="cursor-pointer hover:text-gray-300">
                 <span class="material-symbols-outlined">notifications</span>
-            </div>
-            <button class="bg-[#253b7f] rounded-lg px-3 py-2 text-white text-[16px] flex items-center justify-center max-h-[34px]">
-                Get Started
-            </button>
+            </div> -->
+            <BaseButton>
+                Comece já!
+            </BaseButton>
         </div>
     </div>
-    
 </template>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import BaseButton from './Button.vue'
+const isScrolled = ref(false)
+
+function handleScroll() {
+    isScrolled.value = window.scrollY > 0
+}
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll)
+})
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', handleScroll)
+})
+</script>
