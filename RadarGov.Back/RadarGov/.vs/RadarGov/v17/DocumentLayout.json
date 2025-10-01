@@ -1,0 +1,129 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov.back\\radargov\\radargov.dominio\\entidades\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\entidades\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov.back\\radargov\\radargov.dominio\\servicos\\usuarioservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\servicos\\usuarioservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov.back\\radargov\\radargov.dominio\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov.back\\radargov\\radargov.dominio\\radargov.dominio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\radargov.dominio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Repositorio.csproj|c:\\faculdade\\fabrica_projetos\\radargov.back\\radargov\\radargov.repositorio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Repositorio.csproj|solutionrelative:radargov.repositorio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov.back\\radargov\\radargov.dominio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioServico.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
+              "RelativeDocumentMoniker": "RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
+              "RelativeToolTip": "RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T23:42:26.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Empresa.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Empresa.cs",
+              "RelativeDocumentMoniker": "RadarGov.Dominio\\Entidades\\Empresa.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Empresa.cs",
+              "RelativeToolTip": "RadarGov.Dominio\\Entidades\\Empresa.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA2wB8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T23:38:07.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Usuario.cs",
+              "RelativeDocumentMoniker": "RadarGov.Dominio\\Entidades\\Usuario.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Usuario.cs",
+              "RelativeToolTip": "RadarGov.Dominio\\Entidades\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T23:37:03.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RadarGov.Dominio.csproj",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\RadarGov.Dominio.csproj",
+              "RelativeDocumentMoniker": "RadarGov.Dominio\\RadarGov.Dominio.csproj",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\RadarGov.Dominio.csproj",
+              "RelativeToolTip": "RadarGov.Dominio\\RadarGov.Dominio.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-15T23:35:43.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\Class1.cs",
+              "RelativeDocumentMoniker": "RadarGov.Repositorio\\Class1.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\Class1.cs",
+              "RelativeToolTip": "RadarGov.Repositorio\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T23:35:30.876Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Class1.cs",
+              "RelativeDocumentMoniker": "RadarGov.Dominio\\Class1.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Class1.cs",
+              "RelativeToolTip": "RadarGov.Dominio\\Class1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T23:34:54.171Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
