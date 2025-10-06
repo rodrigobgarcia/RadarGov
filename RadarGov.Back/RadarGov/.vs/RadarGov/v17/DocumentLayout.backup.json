@@ -34,60 +34,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuarioServico.cs",
-              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
-              "RelativeDocumentMoniker": "RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
-              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
-              "RelativeToolTip": "RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T23:42:26.535Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Empresa.cs",
-              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Empresa.cs",
-              "RelativeDocumentMoniker": "RadarGov.Dominio\\Entidades\\Empresa.cs",
-              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Empresa.cs",
-              "RelativeToolTip": "RadarGov.Dominio\\Entidades\\Empresa.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T23:38:07.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Usuario.cs",
-              "RelativeDocumentMoniker": "RadarGov.Dominio\\Entidades\\Usuario.cs",
-              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Usuario.cs",
-              "RelativeToolTip": "RadarGov.Dominio\\Entidades\\Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T23:37:03.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RadarGov.Dominio",
-              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\RadarGov.Dominio.csproj",
-              "RelativeDocumentMoniker": "RadarGov.Dominio\\RadarGov.Dominio.csproj",
-              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\RadarGov.Dominio.csproj",
-              "RelativeToolTip": "RadarGov.Dominio\\RadarGov.Dominio.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-15T23:35:43.209Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -102,6 +50,55 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsuarioServico.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
+              "RelativeDocumentMoniker": "RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
+              "RelativeToolTip": "RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T23:42:26.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Empresa.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Empresa.cs",
+              "RelativeDocumentMoniker": "RadarGov.Dominio\\Entidades\\Empresa.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Empresa.cs",
+              "RelativeToolTip": "RadarGov.Dominio\\Entidades\\Empresa.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA2wB8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T23:38:07.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Usuario.cs",
+              "RelativeDocumentMoniker": "RadarGov.Dominio\\Entidades\\Usuario.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Usuario.cs",
+              "RelativeToolTip": "RadarGov.Dominio\\Entidades\\Usuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T23:37:03.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RadarGov.Dominio.csproj",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\RadarGov.Dominio.csproj",
+              "RelativeDocumentMoniker": "RadarGov.Dominio\\RadarGov.Dominio.csproj",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\RadarGov.Dominio.csproj",
+              "RelativeToolTip": "RadarGov.Dominio\\RadarGov.Dominio.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-15T23:35:43.209Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\Class1.cs",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "RadarGov.Repositorio\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T23:35:30.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T23:35:30.876Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "RadarGov.Dominio\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T23:34:54.171Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T23:34:54.171Z"
             }
           ]
         }
