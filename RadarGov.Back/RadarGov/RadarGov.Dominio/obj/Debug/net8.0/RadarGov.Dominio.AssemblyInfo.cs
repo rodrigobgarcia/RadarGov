@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RadarGov.Dominio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45c4dbf147377ce78f254c1e3dfae1e44a0a5208")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e38de0c453f07a617bb9aefed71d1dd8f5046d6")]
 [assembly: System.Reflection.AssemblyProductAttribute("RadarGov.Dominio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RadarGov.Dominio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{672C5508-99AE-4076-9C27-1EF7B193AED4}|RadarGov.API\\RadarGov.API.csproj|c:\\users\\matpe\\onedrive\\desktop\\radargov\\radargov.back\\radargov\\radargov.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{672C5508-99AE-4076-9C27-1EF7B193AED4}|RadarGov.API\\RadarGov.API.csproj|solutionrelative:radargov.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{672C5508-99AE-4076-9C27-1EF7B193AED4}|RadarGov.API\\RadarGov.API.csproj|c:\\users\\matpe\\onedrive\\desktop\\radargov\\radargov.back\\radargov\\radargov.api\\jobs\\jobgetlicitacoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{672C5508-99AE-4076-9C27-1EF7B193AED4}|RadarGov.API\\RadarGov.API.csproj|solutionrelative:radargov.api\\jobs\\jobgetlicitacoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{672C5508-99AE-4076-9C27-1EF7B193AED4}|RadarGov.API\\RadarGov.API.csproj|c:\\users\\matpe\\onedrive\\desktop\\radargov\\radargov.back\\radargov\\radargov.api\\radargov.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{672C5508-99AE-4076-9C27-1EF7B193AED4}|RadarGov.API\\RadarGov.API.csproj|solutionrelative:radargov.api\\radargov.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\users\\matpe\\onedrive\\desktop\\radargov\\radargov.back\\radargov\\radargov.dominio\\radargov.dominio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\radargov.dominio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\users\\matpe\\onedrive\\desktop\\radargov\\radargov.back\\radargov\\radargov.dominio\\entidades\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\users\\matpe\\onedrive\\desktop\\radargov\\radargov.back\\radargov\\radargov.dominio\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\users\\matpe\\onedrive\\desktop\\radargov\\radargov.back\\radargov\\radargov.dominio\\radargov.dominio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\radargov.dominio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Repositorio.csproj|c:\\users\\matpe\\onedrive\\desktop\\radargov\\radargov.back\\radargov\\radargov.repositorio\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,21 +46,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RadarGov.API",
-              "DocumentMoniker": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\RadarGov.API.csproj",
-              "RelativeDocumentMoniker": "RadarGov.API\\RadarGov.API.csproj",
-              "ToolTip": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\RadarGov.API.csproj",
-              "RelativeToolTip": "RadarGov.API\\RadarGov.API.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-06T19:53:28.84Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -67,7 +62,45 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\Program.cs",
+              "RelativeDocumentMoniker": "RadarGov.API\\Program.cs",
+              "ToolTip": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\Program.cs",
+              "RelativeToolTip": "RadarGov.API\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T20:18:00.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JobGetLicitacoes.cs",
+              "DocumentMoniker": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\Jobs\\JobGetLicitacoes.cs",
+              "RelativeDocumentMoniker": "RadarGov.API\\Jobs\\JobGetLicitacoes.cs",
+              "ToolTip": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\Jobs\\JobGetLicitacoes.cs",
+              "RelativeToolTip": "RadarGov.API\\Jobs\\JobGetLicitacoes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T20:09:34.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "RadarGov.API.csproj",
+              "DocumentMoniker": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\RadarGov.API.csproj",
+              "RelativeDocumentMoniker": "RadarGov.API\\RadarGov.API.csproj",
+              "ToolTip": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\RadarGov.API.csproj",
+              "RelativeToolTip": "RadarGov.API\\RadarGov.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-06T19:53:28.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "UsuarioServico.cs",
               "DocumentMoniker": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
               "RelativeDocumentMoniker": "RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
@@ -75,12 +108,11 @@
               "RelativeToolTip": "RadarGov.Dominio\\Servicos\\UsuarioServico.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T23:42:26.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T23:42:26.535Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Empresa.cs",
               "DocumentMoniker": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Empresa.cs",
               "RelativeDocumentMoniker": "RadarGov.Dominio\\Entidades\\Empresa.cs",
@@ -88,12 +120,11 @@
               "RelativeToolTip": "RadarGov.Dominio\\Entidades\\Empresa.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAywB8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T23:38:07.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T23:38:07.371Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Entidades\\Usuario.cs",
               "RelativeDocumentMoniker": "RadarGov.Dominio\\Entidades\\Usuario.cs",
@@ -101,12 +132,11 @@
               "RelativeToolTip": "RadarGov.Dominio\\Entidades\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T23:37:03.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T23:37:03.776Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "RadarGov.Dominio.csproj",
               "DocumentMoniker": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\RadarGov.Dominio.csproj",
               "RelativeDocumentMoniker": "RadarGov.Dominio\\RadarGov.Dominio.csproj",
@@ -114,12 +144,11 @@
               "RelativeToolTip": "RadarGov.Dominio\\RadarGov.Dominio.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-15T23:35:43.209Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T23:35:43.209Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\Class1.cs",
               "RelativeDocumentMoniker": "RadarGov.Repositorio\\Class1.cs",
@@ -127,12 +156,11 @@
               "RelativeToolTip": "RadarGov.Repositorio\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T23:35:30.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T23:35:30.876Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\matpe\\OneDrive\\Desktop\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Class1.cs",
               "RelativeDocumentMoniker": "RadarGov.Dominio\\Class1.cs",
@@ -140,8 +168,7 @@
               "RelativeToolTip": "RadarGov.Dominio\\Class1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-15T23:34:54.171Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-15T23:34:54.171Z"
             }
           ]
         }
