@@ -15,8 +15,7 @@ namespace RadarGov.API
 
             builder.Services.AddQuartz(q =>
             {
-                q.UseMicrosoftDependencyInjectionJobFactory();
-
+                
                 var jobKey = new JobKey("JobGetLicitacoes");
 
                 q.AddJob<JobGetLicitacoes>(opts => opts.WithIdentity(jobKey));

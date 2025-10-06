@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RadarGov.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e38de0c453f07a617bb9aefed71d1dd8f5046d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b7c1c48acdc8b1d178bd9317ec1140bc81fdc7b")]
 [assembly: System.Reflection.AssemblyProductAttribute("RadarGov.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RadarGov.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
