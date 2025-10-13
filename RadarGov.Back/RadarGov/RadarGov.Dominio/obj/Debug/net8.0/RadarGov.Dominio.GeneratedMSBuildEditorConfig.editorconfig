@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RadarGov.Dominio
-build_property.ProjectDir = C:\FACULDADE\FABRICA_PROJETOS\RadarGov.Back\RadarGov\RadarGov.Dominio\
+build_property.ProjectDir = C:\FACULDADE\FABRICA_PROJETOS\RadarGov\RadarGov.Back\RadarGov\RadarGov.Dominio\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
