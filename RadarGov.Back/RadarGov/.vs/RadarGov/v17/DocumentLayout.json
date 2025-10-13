@@ -3,44 +3,52 @@
   "WorkspaceRootPath": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.dominio\\servicos\\modalidadeservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\servicos\\modalidadeservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Repositorio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.repositorio\\radargov.repositorio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Repositorio.csproj|solutionrelative:radargov.repositorio\\radargov.repositorio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{80D5AF0A-7D6C-4F42-BDD0-0FBA6203CABC}|RadarGov.Integracoes\\RadarGov.Integracoes.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.integracoes\\pncp\\pncp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80D5AF0A-7D6C-4F42-BDD0-0FBA6203CABC}|RadarGov.Integracoes\\RadarGov.Integracoes.csproj|solutionrelative:radargov.integracoes\\pncp\\pncp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.dominio\\dtos\\modalidadedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\dtos\\modalidadedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.dominio\\entidades\\modalidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\entidades\\modalidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.dominio\\ireposoitorio\\ibaserepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\ireposoitorio\\ibaserepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.repositorio\\radargov.infraestrutura.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj|solutionrelative:radargov.repositorio\\radargov.infraestrutura.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{672C5508-99AE-4076-9C27-1EF7B193AED4}|RadarGov.API\\RadarGov.API.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.api\\radargov.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{672C5508-99AE-4076-9C27-1EF7B193AED4}|RadarGov.API\\RadarGov.API.csproj|solutionrelative:radargov.api\\radargov.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.dominio\\radargov.dominio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\radargov.dominio.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.repositorio\\repositorios\\modalidaderepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj|solutionrelative:radargov.repositorio\\repositorios\\modalidaderepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.dominio\\entidades\\modalidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\entidades\\modalidade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.dominio\\servicos\\modalidadeservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\servicos\\modalidadeservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.dominio\\dtos\\modalidadedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\dtos\\modalidadedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.dominio\\ireposoitorio\\ibaserepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3259525E-40D1-4196-B482-3E9EDFFC5650}|RadarGov.Dominio\\RadarGov.Dominio.csproj|solutionrelative:radargov.dominio\\ireposoitorio\\ibaserepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{672C5508-99AE-4076-9C27-1EF7B193AED4}|RadarGov.API\\RadarGov.API.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{672C5508-99AE-4076-9C27-1EF7B193AED4}|RadarGov.API\\RadarGov.API.csproj|solutionrelative:radargov.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.repositorio\\repositorios\\basereporitorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj|solutionrelative:radargov.repositorio\\repositorios\\basereporitorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Integracoes\\Pncp\\Pncp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RadarGov.Integracoes\\Pncp\\Pncp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Repositorio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.repositorio\\repositorios\\modalidaderepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Repositorio.csproj|solutionrelative:radargov.repositorio\\repositorios\\modalidaderepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Repositorio.csproj|c:\\faculdade\\fabrica_projetos\\radargov\\radargov.back\\radargov\\radargov.repositorio\\repositorios\\basereporitorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FE7E7603-952B-4D1E-902E-645D34107CC4}|RadarGov.Repositorio\\RadarGov.Repositorio.csproj|solutionrelative:radargov.repositorio\\repositorios\\basereporitorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,21 +58,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Pncp.cs",
-              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Integracoes\\Pncp\\Pncp.cs",
-              "RelativeDocumentMoniker": "RadarGov.Integracoes\\Pncp\\Pncp.cs",
-              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Integracoes\\Pncp\\Pncp.cs",
-              "RelativeToolTip": "RadarGov.Integracoes\\Pncp\\Pncp.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T01:16:40.899Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -79,15 +74,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ModalidadeDTO.cs",
-              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\DTOs\\ModalidadeDTO.cs",
-              "RelativeDocumentMoniker": "RadarGov.Dominio\\DTOs\\ModalidadeDTO.cs",
-              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\DTOs\\ModalidadeDTO.cs",
-              "RelativeToolTip": "RadarGov.Dominio\\DTOs\\ModalidadeDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T01:19:12.957Z",
+              "DocumentIndex": 1,
+              "Title": "RadarGov.API",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\RadarGov.API.csproj",
+              "RelativeDocumentMoniker": "RadarGov.API\\RadarGov.API.csproj",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\RadarGov.API.csproj",
+              "RelativeToolTip": "RadarGov.API\\RadarGov.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-13T23:28:23.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RadarGov.Repositorio",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\RadarGov.Repositorio.csproj",
+              "RelativeDocumentMoniker": "RadarGov.Repositorio\\RadarGov.Repositorio.csproj",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\RadarGov.Repositorio.csproj",
+              "RelativeToolTip": "RadarGov.Repositorio\\RadarGov.Repositorio.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-13T23:28:16.398Z",
               "EditorCaption": ""
             },
             {
@@ -105,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "IBaseRepositorio.cs",
               "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\IReposoitorio\\IBaseRepositorio.cs",
               "RelativeDocumentMoniker": "RadarGov.Dominio\\IReposoitorio\\IBaseRepositorio.cs",
@@ -113,12 +121,11 @@
               "RelativeToolTip": "RadarGov.Dominio\\IReposoitorio\\IBaseRepositorio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T01:14:11.891Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-09T01:14:11.891Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ModalidadeRepositorio.cs",
               "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\Repositorios\\ModalidadeRepositorio.cs",
               "RelativeDocumentMoniker": "RadarGov.Repositorio\\Repositorios\\ModalidadeRepositorio.cs",
@@ -126,39 +133,24 @@
               "RelativeToolTip": "RadarGov.Repositorio\\Repositorios\\ModalidadeRepositorio.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T01:09:25.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-09T01:09:25.823Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ModalidadeServico.cs",
               "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Servicos\\ModalidadeServico.cs",
               "RelativeDocumentMoniker": "RadarGov.Dominio\\Servicos\\ModalidadeServico.cs",
               "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\Servicos\\ModalidadeServico.cs",
               "RelativeToolTip": "RadarGov.Dominio\\Servicos\\ModalidadeServico.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T01:09:02.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-09T01:09:02.412Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BaseReporitorio.cs",
-              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\Repositorios\\BaseReporitorio.cs",
-              "RelativeDocumentMoniker": "RadarGov.Repositorio\\Repositorios\\BaseReporitorio.cs",
-              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\Repositorios\\BaseReporitorio.cs",
-              "RelativeToolTip": "RadarGov.Repositorio\\Repositorios\\BaseReporitorio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T01:06:36.255Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RadarGov.Dominio",
+              "DocumentIndex": 2,
+              "Title": "RadarGov.Dominio.csproj",
               "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\RadarGov.Dominio.csproj",
               "RelativeDocumentMoniker": "RadarGov.Dominio\\RadarGov.Dominio.csproj",
               "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\RadarGov.Dominio.csproj",
@@ -171,19 +163,54 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "RadarGov.Infraestrutura",
+              "Title": "ModalidadeDTO.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\DTOs\\ModalidadeDTO.cs",
+              "RelativeDocumentMoniker": "RadarGov.Dominio\\DTOs\\ModalidadeDTO.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Dominio\\DTOs\\ModalidadeDTO.cs",
+              "RelativeToolTip": "RadarGov.Dominio\\DTOs\\ModalidadeDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T01:19:12.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Pncp.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Integracoes\\Pncp\\Pncp.cs",
+              "RelativeDocumentMoniker": "RadarGov.Integracoes\\Pncp\\Pncp.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Integracoes\\Pncp\\Pncp.cs",
+              "RelativeToolTip": "RadarGov.Integracoes\\Pncp\\Pncp.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T01:16:40.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BaseReporitorio.cs",
+              "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\Repositorios\\BaseReporitorio.cs",
+              "RelativeDocumentMoniker": "RadarGov.Repositorio\\Repositorios\\BaseReporitorio.cs",
+              "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\Repositorios\\BaseReporitorio.cs",
+              "RelativeToolTip": "RadarGov.Repositorio\\Repositorios\\BaseReporitorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T01:06:36.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RadarGov.Infraestrutura.csproj",
               "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj",
               "RelativeDocumentMoniker": "RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj",
               "ToolTip": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj",
               "RelativeToolTip": "RadarGov.Repositorio\\RadarGov.Infraestrutura.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-09T01:06:17.987Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-09T01:06:17.987Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\FACULDADE\\FABRICA_PROJETOS\\RadarGov\\RadarGov.Back\\RadarGov\\RadarGov.API\\Program.cs",
               "RelativeDocumentMoniker": "RadarGov.API\\Program.cs",
@@ -191,8 +218,7 @@
               "RelativeToolTip": "RadarGov.API\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T01:08:18.603Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-09T01:08:18.603Z"
             }
           ]
         }
