@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RadarGov.Dominio.DTOs
 {
-    internal class ModalidadeDTO
+    public class ModalidadeDTO
     {
+
     }
 }
