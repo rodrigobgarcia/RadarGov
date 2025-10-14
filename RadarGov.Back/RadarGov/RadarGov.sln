@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarGov.API", "RadarGov.AP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarGov.Dominio", "RadarGov.Dominio\RadarGov.Dominio.csproj", "{3259525E-40D1-4196-B482-3E9EDFFC5650}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarGov.Repositorio", "RadarGov.Repositorio\RadarGov.Repositorio.csproj", "{FE7E7603-952B-4D1E-902E-645D34107CC4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarGov.Integracoes", "RadarGov.Integracoes\RadarGov.Integracoes.csproj", "{BA5E6C97-36A7-4F75-9831-1C5755567600}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarGov.Infraestrutura", "RadarGov.Infraestrutura\RadarGov.Infraestrutura.csproj", "{6D4C5B69-06E3-460C-B375-A4F4EAA5E133}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +33,10 @@ Global
 		{BA5E6C97-36A7-4F75-9831-1C5755567600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA5E6C97-36A7-4F75-9831-1C5755567600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA5E6C97-36A7-4F75-9831-1C5755567600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D4C5B69-06E3-460C-B375-A4F4EAA5E133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4C5B69-06E3-460C-B375-A4F4EAA5E133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4C5B69-06E3-460C-B375-A4F4EAA5E133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4C5B69-06E3-460C-B375-A4F4EAA5E133}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

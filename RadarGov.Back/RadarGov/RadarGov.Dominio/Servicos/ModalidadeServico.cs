@@ -2,6 +2,7 @@
 using RadarGov.Dominio.Interfaces;
 using RadarGov.Integracoes.Pnc;
 using System.Text.Json;
+using static RadarGov.Dominio.DTOs.ModalidadeDTOs;
 
 namespace RadarGov.Dominio.Servicos
 {
@@ -47,18 +48,6 @@ namespace RadarGov.Dominio.Servicos
                 Console.WriteLine(ex.Message);
                 return false;
             }
-        }
-
-        // DTO para mapear apenas modalidades do JSON
-        private class FiltrosDto
-        {
-            public List<ModalidadeDto> Modalidades { get; set; } = new();
-        }
-
-        private class ModalidadeDto
-        {
-            public string Id { get; set; }
-            public string Nome { get; set; }
         }
     }
 }
