@@ -4,8 +4,9 @@ using RadarGov.Infraestrutura.Interfaces;
 
 namespace RadarGov.Dominio.Interfaces
 {
-    public interface IImportacaoTerceiroRepositorio : IBaseRepositorio<Modalidade>
+    public interface IImportacaoTerceiroRepositorio<TEntity> : IBaseRepositorio<TEntity> where TEntity : BaseImportacaoTerceiro
     {
-        Task<Modalidade?> ObterPorIdTerceiroAsync(string idTerceiro);
+        Task<TEntity?> ObterPorIdTerceiroAsync(string idTerceiro);
     }
+
 }

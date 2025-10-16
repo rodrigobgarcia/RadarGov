@@ -1,31 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 namespace RadarGov.Dominio.Entidades
 {
-    public class Esfera 
+    public class Esfera : BaseImportacaoTerceiro
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public string Id { get; set;}
-
-        public string IdTerceiro { get; set;}
-
         public string Nome { get; set;}
-
-       public DateTime CriadoEM { get; set;}
-
-       public DateTime UltimaAteracao { get; set;}
-
 
         public Esfera(string idTerceiro, string nome)
         {
             this.IdTerceiro = idTerceiro;
             this.Nome = nome;
-            this.CriadoEM = DateTime.Now;
-            this.UltimaAteracao = DateTime.Now;
+            this.CriadoEm = DateTime.Now;
+            this.UltimaAlteracao = DateTime.Now;
         }
 
         private Esfera() { 
