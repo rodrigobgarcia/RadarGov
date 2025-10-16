@@ -4,7 +4,7 @@ using RadarGov.Infraestrutura.Interfaces;
 
 namespace RadarGov.Dominio.Interfaces
 {
-    public interface IModalidadeRepositorio : IBaseRepositorio<Modalidade>
+    public interface IImportacaoTerceiroRepositorio : IBaseRepositorio<Modalidade>
     {
         Task<Modalidade?> ObterPorIdTerceiroAsync(string idTerceiro);
     }

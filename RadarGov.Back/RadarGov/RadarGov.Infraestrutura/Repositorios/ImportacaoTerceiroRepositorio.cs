@@ -1,13 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RadarGov.Dominio.Entidades;
 using RadarGov.Dominio.Interfaces;
-using RadarGov.Repositorio;
 
 namespace RadarGov.Infraestrutura.Repositorios
 {
-    public class ModalidadeRepositorio : BaseRepositorio<Modalidade>, IModalidadeRepositorio
+    public class ImportacaoTerceiroRepositorio : BaseRepositorio<Modalidade>, IImportacaoTerceiroRepositorio
     {
-        public ModalidadeRepositorio(RadarGovDbContext context) : base(context)
+        public ImportacaoTerceiroRepositorio(RadarGovDbContext context) : base(context)
         {
         }
 

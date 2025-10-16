@@ -3,15 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace RadarGov.Dominio.Entidades
 {
-    public class Modalidade
+    public class Modalidade : BaseImportacaoTerceiro
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public string Id { get; set; }
-        public string IdTerceiro { get; set; }
         public string Nome { get; set; }
-        public DateTime CriadoEm { get; set; }
-        public DateTime UltimaAlteracao { get; set; }
 
         public Modalidade(string idTerceiro, string nome)
         {

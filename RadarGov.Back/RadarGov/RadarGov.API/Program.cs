@@ -1,5 +1,8 @@
 using Quartz;
 using RadarGov.API.Jobs;
+using RadarGov.Infraestrutura;
+using Microsoft.EntityFrameworkCore;
+
 namespace RadarGov.API
 {
     public class Program
@@ -9,25 +12,31 @@ namespace RadarGov.API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
+            // Adiciona DbContext com connection string do appsettings.json
+            builder.Services.AddDbContext<RadarGovDbContext>(options =>
+                options.UseMySql(
+                    builder.Configuration.GetConnectionString("RadarGovDb"),
+                    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("RadarGovDb"))
+                )
+            );
+
+            // Configura Quartz
             builder.Services.AddQuartz(q =>
             {
-
                 var jobKey = new JobKey("JobGetLicitacoes");
 
                 q.AddJob<JobGetLicitacoes>(opts => opts.WithIdentity(jobKey));
 
                 q.AddTrigger(opts => opts.ForJob(jobKey)
-                .WithIdentity("JobGetLicitacoes-trigger")
-                .WithCronSchedule("0/1 * * * * ?"));
-
+                    .WithIdentity("JobGetLicitacoes-trigger")
+                    .WithCronSchedule("0/1 * * * * ?"));
             });
 
             builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
+            // Swagger
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
@@ -41,10 +50,7 @@ namespace RadarGov.API
             }
 
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();

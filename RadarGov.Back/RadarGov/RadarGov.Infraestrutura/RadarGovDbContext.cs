@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
+﻿using Microsoft.EntityFrameworkCore;
 using RadarGov.Dominio.Entidades;
 
-namespace RadarGov.Repositorio;
+namespace RadarGov.Infraestrutura;
 
 public partial class RadarGovDbContext : DbContext
 {
@@ -17,10 +14,6 @@ public partial class RadarGovDbContext : DbContext
         : base(options)
     {
     }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySql("server=localhost;user id=root;password=mysql;database=db_radargov", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.39-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

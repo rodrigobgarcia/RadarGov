@@ -8,10 +8,10 @@ namespace RadarGov.Dominio.Servicos
 {
     public class ModalidadeServico
     {
-        private readonly IModalidadeRepositorio _modalidadeRepositorio;
+        private readonly IImportacaoTerceiroRepositorio _modalidadeRepositorio;
         private readonly Pncp _pncp;
 
-        public ModalidadeServico(IModalidadeRepositorio modalidadeRepositorio)
+        public ModalidadeServico(IImportacaoTerceiroRepositorio modalidadeRepositorio)
         {
             _modalidadeRepositorio = modalidadeRepositorio;
             _pncp = new Pncp();

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RadarGov.Infraestrutura.Interfaces;
-using RadarGov.Repositorio;
 using System.Linq.Expressions;
 
 
