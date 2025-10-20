@@ -1,9 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Net.Http;
-using System.IO.Compression;
+﻿using System.IO.Compression;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace RadarGov.Integracoes.Pnc
 {
@@ -26,7 +22,6 @@ namespace RadarGov.Integracoes.Pnc
                 // Faz a requisição para a API
                 var resposta = await cliente.GetAsync("/api/search/filters?tipos_documento=edital&");
 
-                // Garante que a resposta tenha sido bem-sucedida (status 2xx)
                 resposta.EnsureSuccessStatusCode();
 
                 // Verifique se o conteúdo está comprimido com GZIP
@@ -34,25 +29,21 @@ namespace RadarGov.Integracoes.Pnc
 
                 if (encoding.Contains("gzip"))
                 {
-                    // Se a resposta for comprimida, descompacte o conteúdo
                     using var compressedStream = await resposta.Content.ReadAsStreamAsync();
                     using var decompressedStream = new GZipStream(compressedStream, CompressionMode.Decompress);
                     using var reader = new StreamReader(decompressedStream, Encoding.UTF8);
 
-                    // Leia o conteúdo descomprimido
                     var corpoResposta = await reader.ReadToEndAsync();
 
                     return corpoResposta;
                 }
                 else
                 {
-                    // Se o conteúdo não estiver comprimido, apenas leia a resposta
                     return await resposta.Content.ReadAsStringAsync();
                 }
             }
             catch (HttpRequestException ex)
             {
-                // Capture e retorne o erro se houver falha
                 return $"Erro ao fazer a requisição: {ex.Message}";
             }
         }
