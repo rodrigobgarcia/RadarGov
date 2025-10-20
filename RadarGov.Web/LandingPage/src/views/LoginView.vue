@@ -1,7 +1,9 @@
 <template>
     <div class="flex h-screen">
-        <div class="flex flex-col justify-center w-1/2 bg-gradient-to-r from-teal-900 to-emerald-950 ">
-            <h1 class="text-5xl font-bold text-white p-12 text-center">RadarGov</h1>
+        <div class="w-1/2 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-teal-950 to-emerald-950"></div>
+            <div class="absolute inset-0 bg-center bg-cover opacity-45" style="background-image: url('/RadarGov/martelo.jpg')"></div>
+            <div class="relative z-10 flex items-center justify-center h-full"><h1 class="text-6xl font-bold text-white p-12 text-center ">RadarGov</h1></div>
         </div>
 
         <div class="flex items-center items-center justify-center w-1/2 p-24 bg-gray-50">
