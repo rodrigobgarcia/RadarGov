@@ -38,7 +38,6 @@ namespace RadarGov.Dominio.Servicos
 
                 var filtros = JsonSerializer.Deserialize<FiltrosDto>(json, options);
 
-
                 if (filtros?.Filters?.Modalidades == null || !filtros.Filters.Modalidades.Any())
                 {
                     _mensagens.Adicionar("Nenhuma modalidade encontrada para importação.", TipoMensagem.Aviso);
@@ -46,21 +45,36 @@ namespace RadarGov.Dominio.Servicos
                 }
 
                 int novas = 0;
+                int atualizadas = 0;
 
                 foreach (var item in filtros.Filters.Modalidades)
                 {
                     var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
+
                     if (existente == null)
                     {
+                        // Não existe ainda - cria uma nova
                         var nova = new Modalidade(item.Id, item.Nome);
                         await _repositorio.AddAsync(nova);
                         novas++;
+                    }
+                    else
+                    {
+                        // Já existe - verifica se o nome mudou
+                        if (!string.Equals(existente.Nome, item.Nome, StringComparison.OrdinalIgnoreCase))
+                        {
+                            existente.Nome = item.Nome;
+                            await _repositorio.UpdateAsync(existente);
+                            atualizadas++;
+                        }
                     }
                 }
 
                 await _repositorio.SaveChangesAsync();
 
-                _mensagens.Adicionar($"Importação concluída. {novas} novas modalidades adicionadas.", TipoMensagem.Sucesso);
+                _mensagens.Adicionar(
+                    $"Importação concluída. {novas} novas modalidades adicionadas e {atualizadas} atualizadas.",
+                    TipoMensagem.Sucesso);
 
                 return true;
             }
@@ -70,5 +84,6 @@ namespace RadarGov.Dominio.Servicos
                 return false;
             }
         }
+
     }
 }
