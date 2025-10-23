@@ -11,6 +11,7 @@ public partial class RadarGovDbContext : DbContext
     public DbSet<Ufs> Ufs { get; set; }
     public DbSet<Municipio> Municipios { get; set; }
     public DbSet<Poder> Poderes { get; set; }
+    public DbSet<Tipo> Tipos { get; set; }
     public RadarGovDbContext()
     {
     }

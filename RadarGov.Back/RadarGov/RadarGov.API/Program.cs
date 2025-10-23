@@ -37,12 +37,14 @@ namespace RadarGov.API
             builder.Services.AddScoped<UnidadeServico>();
             builder.Services.AddScoped<UfsServico>();
             builder.Services.AddScoped<PoderServico>();
+            builder.Services.AddScoped<Tipo>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Modalidade>, ImportacaoTerceiroRepositorio<Modalidade>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Orgao>, ImportacaoTerceiroRepositorio<Orgao>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Unidade>, ImportacaoTerceiroRepositorio<Unidade>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Ufs>, ImportacaoTerceiroRepositorio<Ufs>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Municipio>, ImportacaoTerceiroRepositorio<Municipio>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Poder>, ImportacaoTerceiroRepositorio<Poder>>();
+            builder.Services.AddScoped<ImportacaoTerceiroRepositorio<Tipo>, ImportacaoTerceiroRepositorio<Tipo>>();
             builder.Services.AddScoped<MensagemServico>();
             builder.Services.AddHttpClient<Pncp>();
 
