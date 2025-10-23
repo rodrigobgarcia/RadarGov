@@ -4,12 +4,8 @@ using RadarGov.Dominio.Interfaces;
 using RadarGov.Dominio.Notificacoes.Entidades;
 using RadarGov.Dominio.Notificacoes.Servicos;
 using RadarGov.Integracoes.Pnc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
+
 
 namespace RadarGov.Dominio.Servicos
 {
@@ -26,7 +22,7 @@ namespace RadarGov.Dominio.Servicos
             _mensagens = mensagens;
         }
 
-        public async Task<bool> ImportarOrgaosAsync()
+        public async Task<bool> ImportarAsync()
         {
             try
             {

@@ -1,8 +1,6 @@
 using Quartz;
-using RadarGov.API.Jobs;
 using RadarGov.Infraestrutura;
 using Microsoft.EntityFrameworkCore;
-using RadarGov.Infraestrutura.IoC;
 using RadarGov.Dominio.Entidades;
 using RadarGov.Dominio.Interfaces;
 using RadarGov.Dominio.Notificacoes.Servicos;
@@ -38,11 +36,13 @@ namespace RadarGov.API
             builder.Services.AddScoped<OrgaoServico>();
             builder.Services.AddScoped<UnidadeServico>();
             builder.Services.AddScoped<UfsServico>();
+            builder.Services.AddScoped<PoderServico>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Modalidade>, ImportacaoTerceiroRepositorio<Modalidade>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Orgao>, ImportacaoTerceiroRepositorio<Orgao>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Unidade>, ImportacaoTerceiroRepositorio<Unidade>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Ufs>, ImportacaoTerceiroRepositorio<Ufs>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Municipio>, ImportacaoTerceiroRepositorio<Municipio>>();
+            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Poder>, ImportacaoTerceiroRepositorio<Poder>>();
             builder.Services.AddScoped<MensagemServico>();
             builder.Services.AddHttpClient<Pncp>();
 
