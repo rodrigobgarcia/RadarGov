@@ -13,20 +13,20 @@ using System.Threading.Tasks;
 
 namespace RadarGov.Dominio.Servicos
 {
-    public class OrgaoServico
+    public class TipoMargemPreferenciaServico
     {
-        private readonly IImportacaoTerceiroRepositorio<Orgao> _repositorio;
+        private readonly IImportacaoTerceiroRepositorio<TipoMargemPreferencia> _repositorio;
         private readonly Pncp _pncp;
         private readonly MensagemServico _mensagens;
 
-        public OrgaoServico(IImportacaoTerceiroRepositorio<Orgao> orgaoRepositorio, MensagemServico mensagens)
+        public TipoMargemPreferenciaServico(IImportacaoTerceiroRepositorio<TipoMargemPreferencia> tipoMargemPreferencia, MensagemServico mensagens)
         {
-            _repositorio = orgaoRepositorio;
+            _repositorio = tipoMargemPreferencia;
             _pncp = new Pncp();
-            _mensagens = mensagens;
+            _mensagens = mensagens; 
         }
 
-        public async Task<bool> ImportarOrgaosAsync()
+        public async Task<bool> ImportarTipoMargemPreferenciaAsync()
         {
             try
             {
@@ -36,31 +36,32 @@ namespace RadarGov.Dominio.Servicos
 
                 var options = new JsonSerializerOptions
                 {
-                    PropertyNameCaseInsensitive = true
+                    PropertyNameCaseInsensitive = true,
                 };
 
-                var filtros = JsonSerializer.Deserialize<FiltrosDto>(json, options);
+                var filtros = JsonSerializer.Deserialize<FiltrosDto>(json, options) ;
 
-                if(filtros?.Filters?.Orgaos == null || !filtros.Filters.Orgaos.Any())
+                if (filtros?.Filters.Modalidades == null || !filtros.Filters.Modalidades.Any())
                 {
-                    _mensagens.Adicionar("Nenhum orgão encontrado para importação", TipoMensagem.Aviso);
+                    _mensagens.Adicionar("Nenhuma modalidade encontrada para importação.", TipoMensagem.Aviso);
                     return false;
                 }
 
                 int novas = 0;
                 int atualizadas = 0;
 
-                foreach (var item in filtros.Filters.Orgaos)
+                foreach (var item in filtros.Filters.TiposMargensPreferencia)
                 {
                     var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
 
-                    if (existente == null)
+                    if (existente != null)
                     {
-                        var nova = new Orgao(item.Id, item.Nome, item.Cnpj);
+                        var nova = new TipoMargemPreferencia(item.Id, item.Nome);
+
                         await _repositorio.AddAsync(nova);
                         novas++;
-
                     }
+
                     else
                     {
                         if (!string.Equals(existente.Nome, item.Nome, StringComparison.OrdinalIgnoreCase))
@@ -75,16 +76,16 @@ namespace RadarGov.Dominio.Servicos
                 await _repositorio.SaveChangesAsync();
 
                 _mensagens.Adicionar(
-                    $"Importação concluída. {novas} novos orgãos adicionados e {atualizadas} atualizado.",
+                    $"Importação concluída. {novas} novas tipos de margens preferência adicionadas e {atualizadas} atualizadas.",
                     TipoMensagem.Sucesso);
 
                 return true;
 
-
             }
-            catch(Exception ex)
+
+            catch (Exception ex)
             {
-                _mensagens.Adicionar($"Erro ao importar orgão: {ex.Message}", TipoMensagem.Erro);
+                _mensagens.Adicionar($"Erro ao importar tipos de margem preferência: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }
         }
