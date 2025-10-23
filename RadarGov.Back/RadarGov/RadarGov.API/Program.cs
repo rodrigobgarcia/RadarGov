@@ -40,6 +40,7 @@ namespace RadarGov.API
             builder.Services.AddScoped<TipoServico>();
             builder.Services.AddScoped<EsferaServico>();
             builder.Services.AddScoped<TipoMargemPreferenciaServico>();
+            builder.Services.AddScoped<FonteOrcamentariaServico>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Modalidade>, ImportacaoTerceiroRepositorio<Modalidade>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Orgao>, ImportacaoTerceiroRepositorio<Orgao>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Unidade>, ImportacaoTerceiroRepositorio<Unidade>>();
@@ -49,6 +50,7 @@ namespace RadarGov.API
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Tipo>, ImportacaoTerceiroRepositorio<Tipo>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Esfera>, ImportacaoTerceiroRepositorio<Esfera>>();
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<TipoMargemPreferencia>, ImportacaoTerceiroRepositorio<TipoMargemPreferencia>>();
+            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<FonteOrcamentaria>, ImportacaoTerceiroRepositorio<FonteOrcamentaria>>();
             builder.Services.AddScoped<MensagemServico>();
             builder.Services.AddHttpClient<Pncp>();
 
