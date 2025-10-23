@@ -8,27 +8,24 @@ using System.Threading.Tasks;
 
 namespace RadarGov.Dominio.Entidades
 {
-    public class FonteOrcamentaria : BaseImportacaoTerceiro
+    public class Tipo : BaseImportacaoTerceiro
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
+
         public string Id { get; set; }
+        public string Nome { get; set; }    
 
-        public string Nome { get; set; }
-
-        public FonteOrcamentaria(string idTerceiro, string nome)
+        public Tipo(string idTerceiro, string nome)
         {
-            this.IdTerceiro = idTerceiro;
+            this.Id = idTerceiro;
             this.Nome = nome;
             this.CriadoEm = DateTime.Now;
             this.UltimaAlteracao = DateTime.Now;
-
         }
 
-        private FonteOrcamentaria()
+        private Tipo() 
         {
-
         }
     }
-
 }

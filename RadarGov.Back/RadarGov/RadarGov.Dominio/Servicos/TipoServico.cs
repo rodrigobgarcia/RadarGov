@@ -13,17 +13,17 @@ using System.Threading.Tasks;
 
 namespace RadarGov.Dominio.Servicos
 {
-    public class TipoMargemPreferenciaServico
+    public class TipoServico
     {
-        private readonly IImportacaoTerceiroRepositorio<TipoMargemPreferencia> _repositorio;
+        private readonly IImportacaoTerceiroRepositorio<Tipo> _repositorio;
         private readonly Pncp _pncp;
         private readonly MensagemServico _mensagens;
 
-        public TipoMargemPreferenciaServico(IImportacaoTerceiroRepositorio<TipoMargemPreferencia> tipoMargemPreferencia, MensagemServico mensagens)
+        public TipoServico(IImportacaoTerceiroRepositorio<Tipo> repositorio, MensagemServico mensagens)
         {
-            _repositorio = tipoMargemPreferencia;
-            _pncp = new Pncp();
-            _mensagens = mensagens; 
+            this._repositorio = repositorio;
+            this._pncp = new Pncp();
+            this._mensagens = mensagens;
         }
 
         public async Task<bool> ImportarAsync()
@@ -39,29 +39,27 @@ namespace RadarGov.Dominio.Servicos
                     PropertyNameCaseInsensitive = true,
                 };
 
-                var filtros = JsonSerializer.Deserialize<FiltrosDto>(json, options) ;
+                var filtros = JsonSerializer.Deserialize<FiltrosDto>(json, options);
 
-                if (filtros?.Filters.TiposMargensPreferencia == null || !filtros.Filters.TiposMargensPreferencia.Any())
+                if (filtros?.Filters?.Tipos ==  null || !filtros.Filters.Tipos.Any())
                 {
-                    _mensagens.Adicionar("Nenhum tipo de margem preferência encontrada para importação.", TipoMensagem.Aviso);
+                    _mensagens.Adicionar($"Nenhum tipo encontrado para importação.", TipoMensagem.Aviso);
                     return false;
                 }
 
                 int novas = 0;
                 int atualizadas = 0;
 
-                foreach (var item in filtros.Filters.TiposMargensPreferencia)
+                foreach (var item in filtros.Filters.Tipos)
                 {
                     var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
 
-                    if (existente != null)
+                    if (existente == null)
                     {
-                        var nova = new TipoMargemPreferencia(item.Id, item.Nome);
-
+                        var nova = new Tipo(item.Id, item.Nome);
                         await _repositorio.AddAsync(nova);
                         novas++;
                     }
-
                     else
                     {
                         if (!string.Equals(existente.Nome, item.Nome, StringComparison.OrdinalIgnoreCase))
@@ -76,16 +74,14 @@ namespace RadarGov.Dominio.Servicos
                 await _repositorio.SaveChangesAsync();
 
                 _mensagens.Adicionar(
-                    $"Importação concluída. {novas} novas tipos de margens preferência adicionadas e {atualizadas} atualizadas.",
+                    $"Importação concluída. {novas} novos tipos adiconados e {atualizadas} atualizados.",
                     TipoMensagem.Sucesso);
 
                 return true;
-
             }
-
             catch (Exception ex)
             {
-                _mensagens.Adicionar($"Erro ao importar tipos de margem preferência: {ex.Message}", TipoMensagem.Erro);
+                _mensagens.Adicionar($"Erro ao importar tipos: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }
         }
