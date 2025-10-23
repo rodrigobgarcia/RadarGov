@@ -1,22 +1,20 @@
-﻿using RadarGov.Dominio.Entidades;
+﻿using RadarGov.Dominio.DTOs;
+using RadarGov.Dominio.Entidades;
 using RadarGov.Dominio.Interfaces;
-using RadarGov.Integracoes.Pnc;
-using System.Text.Json;
 using RadarGov.Dominio.Notificacoes.Entidades;
 using RadarGov.Dominio.Notificacoes.Servicos;
-using RadarGov.Dominio.DTOs;
+using RadarGov.Integracoes.Pnc;
+using System.Text.Json;
 
 namespace RadarGov.Dominio.Servicos
 {
-    public class ModalidadeServico
+    public class UfsServico
     {
-        private readonly IImportacaoTerceiroRepositorio<Modalidade> _repositorio;
+        private readonly IImportacaoTerceiroRepositorio<Ufs> _repositorio;
         private readonly Pncp _pncp;
         private readonly MensagemServico _mensagens;
 
-        public ModalidadeServico(
-            IImportacaoTerceiroRepositorio<Modalidade> repositorio,
-            MensagemServico mensagens)
+        public UfsServico(IImportacaoTerceiroRepositorio<Ufs> repositorio, MensagemServico mensagens)
         {
             _repositorio = repositorio;
             _pncp = new Pncp();
@@ -38,32 +36,32 @@ namespace RadarGov.Dominio.Servicos
 
                 var filtros = JsonSerializer.Deserialize<FiltrosDto>(json, options);
 
-                if (filtros?.Filters?.Modalidades == null || !filtros.Filters.Modalidades.Any())
+                if (filtros?.Filters?.Ufs == null || !filtros.Filters.Ufs.Any())
                 {
-                    _mensagens.Adicionar("Nenhuma modalidade encontrada para importação.", TipoMensagem.Aviso);
+                    _mensagens.Adicionar("Nenhum UF encontrado para importação.", TipoMensagem.Aviso);
                     return false;
                 }
 
                 int novas = 0;
                 int atualizadas = 0;
 
-                foreach (var item in filtros.Filters.Modalidades)
+                foreach (var item in filtros.Filters.Ufs)
                 {
                     var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
 
                     if (existente == null)
                     {
                         // Não existe ainda - cria uma nova
-                        var nova = new Modalidade(item.Id, item.Nome);
+                        var nova = new Ufs(item.Id);
                         await _repositorio.AddAsync(nova);
                         novas++;
                     }
                     else
                     {
                         // Já existe - verifica se o nome mudou
-                        if (!string.Equals(existente.Nome, item.Nome, StringComparison.OrdinalIgnoreCase))
+                        if (!string.Equals(existente.IdTerceiro, item.Id, StringComparison.OrdinalIgnoreCase))
                         {
-                            existente.Nome = item.Nome;
+                            existente.IdTerceiro = item.Id;
                             await _repositorio.UpdateAsync(existente);
                             atualizadas++;
                         }
@@ -73,17 +71,16 @@ namespace RadarGov.Dominio.Servicos
                 await _repositorio.SaveChangesAsync();
 
                 _mensagens.Adicionar(
-                    $"Importação concluída. {novas} novas modalidades adicionadas e {atualizadas} atualizadas.",
+                    $"Importação concluída. {novas} novas UFs adicionadas e {atualizadas} atualizadas.",
                     TipoMensagem.Sucesso);
 
                 return true;
             }
             catch (Exception ex)
             {
-                _mensagens.Adicionar($"Erro ao importar modalidades: {ex.Message}", TipoMensagem.Erro);
+                _mensagens.Adicionar($"Erro ao importar UFs: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }
         }
-
     }
 }

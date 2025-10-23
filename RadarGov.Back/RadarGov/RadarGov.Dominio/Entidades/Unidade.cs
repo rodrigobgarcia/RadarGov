@@ -13,14 +13,11 @@ namespace RadarGov.Dominio.Entidades
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public string Id { get; set; } 
-
         public string Nome { get; set; }    
+        public string? Codigo { get; set; }
+        public string? CodigoNome { get; set; }
 
-        public int Codigo { get; set; }
-
-        public string CodigoNome { get; set; }
-
-        public Unidade(string idTerceiro, string nome, int codigo, string codigoNome)
+        public Unidade(string idTerceiro, string nome, string codigo, string codigoNome)
         {
             this.IdTerceiro = idTerceiro;
             this.Nome = nome;

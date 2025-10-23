@@ -6,14 +6,14 @@ namespace RadarGov.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ModalidadeController : ControllerBase
+    public class UnidadeController : ControllerBase
     {
-        private readonly ModalidadeServico _modalidadeServico;
+        private readonly UnidadeServico _unidadeServico;
         private readonly MensagemServico _mensagens;
 
-        public ModalidadeController(ModalidadeServico modalidadeServico, MensagemServico mensagens)
+        public UnidadeController(UnidadeServico unidadeServico, MensagemServico mensagens)
         {
-            _modalidadeServico = modalidadeServico;
+            _unidadeServico = unidadeServico;
             _mensagens = mensagens;
         }
 
@@ -21,7 +21,7 @@ namespace RadarGov.API.Controllers
         [HttpPost("importar")]
         public async Task<IActionResult> ImportarModalidades()
         {
-            var sucesso = await _modalidadeServico.ImportarAsync();
+            var sucesso = await _unidadeServico.ImportarAsync();
             var resultado = _mensagens.ObterMensagens();
 
             if (!sucesso)
