@@ -23,7 +23,7 @@ namespace RadarGov.Dominio.Entidades
         public List<string> SegmentoInteresse { get; set; }
         public List<string> RegioesAtuacao { get; set; }
 
-        public Empresa(string id, string nome, string tenantId, string cnpj, string email, string senha, DateTime criadoEm, List<string> segmentoInteresse, List<string> RegioesAtuacao)
+        public Empresa(string nome, string tenantId, string cnpj, string email, string senha, DateTime criadoEm, List<string> segmentoInteresse, List<string> RegioesAtuacao)
         {
             this.Nome = nome;
             this.Email = email;
@@ -33,7 +33,6 @@ namespace RadarGov.Dominio.Entidades
             this.CriadoEm = criadoEm;
             this.SegmentoInteresse = segmentoInteresse;
             this.RegioesAtuacao = RegioesAtuacao;
-            this.Id = id;
         }
 
         private Empresa()
