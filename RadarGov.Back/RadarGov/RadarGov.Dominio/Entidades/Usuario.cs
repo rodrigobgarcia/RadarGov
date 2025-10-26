@@ -12,10 +12,10 @@ namespace RadarGov.Dominio.Entidades
         public string Email { get; set; }
         public string Senha { get; set; }
         public DateTime CriadoEm { get; set; } = DateTime.Now;
-        public Empresa Empresa { get; set; }
-        public List<string> Permissoes { get; set; }
+        public Empresa? Empresa { get; set; }
+        public List<string>? Permissoes { get; set; }
 
-        public Usuario (string nome, string email, string senha, Empresa empresa, List<string> permissoes)
+        public Usuario (string nome, string email, string senha, Empresa? empresa, List<string>? permissoes)
         {
             this.Nome = nome;
             this.Email = email;

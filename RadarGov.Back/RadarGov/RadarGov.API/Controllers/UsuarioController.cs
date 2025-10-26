@@ -27,7 +27,7 @@ namespace RadarGov.API.Controllers
 
             if (usuarios == null)
             {
-                Ok(mensagens);
+                return Ok(mensagens);
             }
 
             else
