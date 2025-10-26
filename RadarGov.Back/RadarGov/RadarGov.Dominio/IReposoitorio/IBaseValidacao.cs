@@ -13,5 +13,9 @@ namespace RadarGov.Dominio.IReposoitorio
         public bool ValidateEmail(string email);
 
         public bool ValidatePassword(string password);
+
+        public bool ValidateCnpj(string cnpj);
+
+
     }
 }

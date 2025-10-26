@@ -172,8 +172,6 @@ namespace RadarGov.Dominio.Servicos
                     return false;
                 }
 
-                var usuarioAtualizado = new Usuario(usuarioDto.Nome, usuarioDto.Email, usuarioDto.Senha, null, null);
-
                 var usuarioExistente = await _repositorio.GetByIdAsync(id);
 
                 if (usuarioExistente == null)
@@ -189,7 +187,7 @@ namespace RadarGov.Dominio.Servicos
                 await _repositorio.UpdateAsync(usuarioExistente);
                 await _repositorio.SaveChangesAsync();
 
-                _mensagens.Adicionar("Usuario atualizado", TipoMensagem.Sucesso);
+                _mensagens.Adicionar("Usuario atualizado com sucesso.", TipoMensagem.Sucesso);
                 return true;
 
             }

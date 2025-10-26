@@ -14,23 +14,22 @@ namespace RadarGov.Dominio.Entidades
         [Key]
         public int Id { get; set; }
         public string Nome { get; set; }
-        public string TenantId { get; set; }
+        public string ?TenantId { get; set; }
         public string Cnpj { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
         public DateTime CriadoEm { get; set; } = DateTime.Now;
 
-        public List<string> SegmentoInteresse { get; set; }
-        public List<string> RegioesAtuacao { get; set; }
+        public List<string> ?SegmentoInteresse { get; set; }
+        public List<string> ?RegioesAtuacao { get; set; }
 
-        public Empresa(string nome, string tenantId, string cnpj, string email, string senha, DateTime criadoEm, List<string> segmentoInteresse, List<string> RegioesAtuacao)
+        public Empresa(string nome, string tenantId, string cnpj, string email, string senha, List<string> segmentoInteresse, List<string> RegioesAtuacao)
         {
             this.Nome = nome;
             this.Email = email;
             this.Senha = senha;
             this.Cnpj = cnpj;
             this.TenantId = tenantId;
-            this.CriadoEm = criadoEm;
             this.SegmentoInteresse = segmentoInteresse;
             this.RegioesAtuacao = RegioesAtuacao;
         }

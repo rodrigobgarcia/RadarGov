@@ -41,7 +41,7 @@ namespace RadarGov.API.Controllers
 
         public async Task<IActionResult> PostEmpresa([FromBody] EmpresaDto empresaDto)
         {
-            var response = _empresaServico.PostEmpresa(empresaDto);
+            var response = await _empresaServico.PostEmpresa(empresaDto);
             var mensagens = _mensagens.ObterMensagens();
 
             if (!response)
@@ -57,9 +57,9 @@ namespace RadarGov.API.Controllers
 
         [HttpPut("empresa/{id}")]
 
-        public async Task<IActionResult> UdpateEmpresa(int id, [FromBody] Empresa empresaDto)
+        public async Task<IActionResult> UdpateEmpresa(int id, [FromBody] EmpresaDto empresaDto)
         {
-            var response = _empresaServico.UpdateEmpresa(id, empresaDto);
+            var response = await _empresaServico.UpdateEmpresa(id, empresaDto);
             var mensagens = _mensagens.ObterMensagens();
 
             if (!response)
@@ -76,7 +76,7 @@ namespace RadarGov.API.Controllers
         [HttpDelete("empresa/{id}")]
         public async Task<IActionResult> DeleteEmpresa(int id)
         {
-            var response = _empresaServico.DeleteEmpresa(id);
+            var response = await _empresaServico.DeleteEmpresa(id);
             var mensagens =_mensagens.ObterMensagens();
 
             if (!response)
