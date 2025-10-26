@@ -23,5 +23,10 @@ namespace RadarGov.Infraestrutura.Repositorios
         {
 
         }
+
+        public bool ValidateCnpj(string cnpj)
+        {
+
+        }
     }
 }
