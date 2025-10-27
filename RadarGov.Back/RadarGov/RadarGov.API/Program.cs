@@ -7,6 +7,7 @@ using RadarGov.Dominio.Notificacoes.Servicos;
 using RadarGov.Dominio.Servicos;
 using RadarGov.Infraestrutura.Repositorios;
 using RadarGov.Integracoes.Pnc;
+using RadarGov.Integracoes.Gemini;
 
 namespace RadarGov.API
 {
@@ -30,6 +31,7 @@ namespace RadarGov.API
             //    },
             //    enableLogging: true
             //);
+            var apiKey = builder.Configuration["GoogleApi:ApiKey"];
 
             builder.Services.AddScoped<ModalidadeServico>();
             builder.Services.AddScoped<MunicipioServico>();
@@ -54,6 +56,8 @@ namespace RadarGov.API
             builder.Services.AddScoped<MensagemServico>();
             builder.Services.AddHttpClient<Pncp>();
 
+            builder.Services.AddSingleton(new GeminiApiClient(apiKey));
+            builder.Services.AddScoped<SegmentoClassifierService>();
 
 
             // Add services to the container.
