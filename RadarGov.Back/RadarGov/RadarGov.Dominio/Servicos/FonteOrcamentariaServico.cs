@@ -4,33 +4,24 @@ using RadarGov.Dominio.Interfaces;
 using RadarGov.Dominio.Notificacoes.Entidades;
 using RadarGov.Dominio.Notificacoes.Servicos;
 using RadarGov.Integracoes.Pnc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace RadarGov.Dominio.Servicos
 {
-    public class FonteOrcamentariaServico
+    public class FonteOrcamentariaServico : BaseTerceiroServico<FonteOrcamentaria>
     {
-        private readonly IImportacaoTerceiroRepositorio<FonteOrcamentaria> _repositorio;
         private readonly Pncp _pncp;
-        private readonly MensagemServico _mensagens;
 
-        public FonteOrcamentariaServico (IImportacaoTerceiroRepositorio<FonteOrcamentaria> repositorio, MensagemServico mensagens)
+        public FonteOrcamentariaServico (IImportacaoTerceiroRepositorio<FonteOrcamentaria> repositorio, MensagemServico mensagens): base(repositorio, mensagens)
         {
-            this._repositorio = repositorio;
             this._pncp = new Pncp();
-            this._mensagens = mensagens;
         }
 
         public async Task<bool> ImportarAsync()
         {
             try
             {
-                _mensagens.Limpar();
+                Mensagens.Limpar();
 
                 var json = await _pncp.GetFiltros();
 
@@ -43,7 +34,7 @@ namespace RadarGov.Dominio.Servicos
 
                 if (filtros?.Filters?.FontesOrcamentarias ==  null || !filtros.Filters.FontesOrcamentarias.Any())
                 {
-                    _mensagens.Adicionar($"Nenhuma fonte orçamentária encontrada para importação.", TipoMensagem.Aviso);
+                    Mensagens.Adicionar($"Nenhuma fonte orçamentária encontrada para importação.", TipoMensagem.Aviso);
                     return false;
                 }
 
@@ -52,12 +43,12 @@ namespace RadarGov.Dominio.Servicos
 
                 foreach (var item in filtros.Filters.FontesOrcamentarias)
                 {
-                    var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
+                    var existente = await Repositorio.ObterPorIdTerceiroAsync(item.Id);
 
                     if (existente == null)
                     {
                         var nova = new FonteOrcamentaria(item.Id, item.Nome);
-                        await _repositorio.AddAsync(nova);
+                        await Repositorio.AddAsync(nova);
                         novas++;
                     }
 
@@ -66,16 +57,16 @@ namespace RadarGov.Dominio.Servicos
                         if (!string.Equals(existente.Nome, item.Nome, StringComparison.OrdinalIgnoreCase))
                         {
                             existente.Nome = item.Nome;
-                            await _repositorio.UpdateAsync(existente);
+                            await Repositorio.UpdateAsync(existente);
                             atualizadas++;  
                         }
                     }
 
                 }
 
-                await _repositorio.SaveChangesAsync();
+                await Repositorio.SaveChangesAsync();
 
-                _mensagens.Adicionar(
+                Mensagens.Adicionar(
                     $"Importação concluída. {novas} fontes orçamentárias adicionas e {atualizadas} atualizadas.",
                     TipoMensagem.Sucesso);
 
@@ -84,7 +75,7 @@ namespace RadarGov.Dominio.Servicos
             }
             catch (Exception ex)
             {
-                _mensagens.Adicionar($"Erro ao importar fontes orçamentárias: {ex.Message}", TipoMensagem.Erro);
+                Mensagens.Adicionar($"Erro ao importar fontes orçamentárias: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }
         }

@@ -8,24 +8,20 @@ using System.Text.Json;
 
 namespace RadarGov.Dominio.Servicos
 {
-    public class EsferaServico
+    public class EsferaServico : BaseTerceiroServico<Esfera>
     {
-        private readonly IImportacaoTerceiroRepositorio<Esfera> _repositorio;
         private readonly Pncp _pncp;
-        private readonly MensagemServico _mensagens;
 
-        public EsferaServico(IImportacaoTerceiroRepositorio<Esfera> esferaRepositorio, MensagemServico mensagens)
+        public EsferaServico(IImportacaoTerceiroRepositorio<Esfera> esferaRepositorio, MensagemServico mensagens): base(esferaRepositorio, mensagens)
         {
-            _repositorio = esferaRepositorio;
             _pncp = new Pncp();
-            _mensagens = mensagens;
         }
 
         public async Task<bool> ImportarEsferasaAsync()
         {
             try
             {
-                _mensagens.Limpar();
+                Mensagens.Limpar();
 
                 var json = await _pncp.GetFiltros();
 
@@ -38,7 +34,7 @@ namespace RadarGov.Dominio.Servicos
 
                 if (filtros?.Filters.Esferas == null || !filtros.Filters.Esferas.Any())
                 {
-                    _mensagens.Adicionar("Nenhuma esfera encontrada para importação.", TipoMensagem.Aviso);
+                    Mensagens.Adicionar("Nenhuma esfera encontrada para importação.", TipoMensagem.Aviso);
                 }
 
                 int novas = 0;
@@ -46,12 +42,12 @@ namespace RadarGov.Dominio.Servicos
 
                 foreach (var item in filtros.Filters.Esferas)
                 {
-                    var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
+                    var existente = await Repositorio.ObterPorIdTerceiroAsync(item.Id);
 
                     if (existente == null)
                     {
                         var nova = new Esfera(item.Id, item.Nome);
-                        await _repositorio.AddAsync(nova);
+                        await Repositorio.AddAsync(nova);
                         novas++;
                     }
 
@@ -60,15 +56,15 @@ namespace RadarGov.Dominio.Servicos
                         if (!string.Equals(existente.Nome, item.Nome, StringComparison.OrdinalIgnoreCase))
                         {
                             existente.Nome = item.Nome;
-                            await _repositorio.UpdateAsync(existente);
+                            await Repositorio.UpdateAsync(existente);
                             atualizadas++;
                         }
                     }
                 }
 
-                await _repositorio.SaveChangesAsync();
+                await Repositorio.SaveChangesAsync();
 
-                _mensagens.Adicionar(
+                Mensagens.Adicionar(
                     $"Importação concluída. {novas} novas esferas adicionadas e {atualizadas} atualizadas.",
                     TipoMensagem.Sucesso);
 
@@ -77,7 +73,7 @@ namespace RadarGov.Dominio.Servicos
 
             catch (Exception ex)
             {
-                _mensagens.Adicionar($"Erro ao importar esferas: {ex.Message}", TipoMensagem.Erro);
+                Mensagens.Adicionar($"Erro ao importar esferas: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }
         }

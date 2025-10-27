@@ -8,26 +8,22 @@ using System.Text.Json;
 
 namespace RadarGov.Dominio.Servicos
 {
-    public class PoderServico
+    public class PoderServico : BaseTerceiroServico<Poder>
     {
-        private readonly IImportacaoTerceiroRepositorio<Poder> _repositorio;
         private readonly Pncp _pncp;
-        private readonly MensagemServico _mensagens;
 
         public PoderServico(
             IImportacaoTerceiroRepositorio<Poder> repositorio,
-            MensagemServico mensagens)
+            MensagemServico mensagens) : base(repositorio, mensagens)
         {
-            _repositorio = repositorio;
             _pncp = new Pncp();
-            _mensagens = mensagens;
         }
 
         public async Task<bool> ImportarAsync()
         {
             try
             {
-                _mensagens.Limpar();
+                Mensagens.Limpar();
 
                 var json = await _pncp.GetFiltros();
 
@@ -40,7 +36,7 @@ namespace RadarGov.Dominio.Servicos
 
                 if (filtros?.Filters?.Poderes == null || !filtros.Filters.Poderes.Any())
                 {
-                    _mensagens.Adicionar("Nenhuma modalidade encontrada para importação.", TipoMensagem.Aviso);
+                    Mensagens.Adicionar("Nenhuma modalidade encontrada para importação.", TipoMensagem.Aviso);
                     return false;
                 }
 
@@ -49,13 +45,13 @@ namespace RadarGov.Dominio.Servicos
 
                 foreach (var item in filtros.Filters.Poderes)
                 {
-                    var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
+                    var existente = await Repositorio.ObterPorIdTerceiroAsync(item.Id);
 
                     if (existente == null)
                     {
                         // Não existe ainda - cria uma nova
                         var nova = new Poder(item.Id, item.Nome);
-                        await _repositorio.AddAsync(nova);
+                        await Repositorio.AddAsync(nova);
                         novas++;
                     }
                     else
@@ -64,15 +60,15 @@ namespace RadarGov.Dominio.Servicos
                         if (!string.Equals(existente.Nome, item.Nome, StringComparison.OrdinalIgnoreCase))
                         {
                             existente.Nome = item.Nome;
-                            await _repositorio.UpdateAsync(existente);
+                            await Repositorio.UpdateAsync(existente);
                             atualizadas++;
                         }
                     }
                 }
 
-                await _repositorio.SaveChangesAsync();
+                await Repositorio.SaveChangesAsync();
 
-                _mensagens.Adicionar(
+                Mensagens.Adicionar(
                     $"Importação concluída. {novas} novas poderes adicionadas e {atualizadas} atualizadas.",
                     TipoMensagem.Sucesso);
 
@@ -80,7 +76,7 @@ namespace RadarGov.Dominio.Servicos
             }
             catch (Exception ex)
             {
-                _mensagens.Adicionar($"Erro ao importar poderes: {ex.Message}", TipoMensagem.Erro);
+                Mensagens.Adicionar($"Erro ao importar poderes: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }
         }

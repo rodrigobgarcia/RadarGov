@@ -8,26 +8,22 @@ using RadarGov.Dominio.DTOs;
 
 namespace RadarGov.Dominio.Servicos
 {
-    public class ModalidadeServico
+    public class ModalidadeServico : BaseTerceiroServico<Modalidade>
     {
-        private readonly IImportacaoTerceiroRepositorio<Modalidade> _repositorio;
         private readonly Pncp _pncp;
-        private readonly MensagemServico _mensagens;
 
         public ModalidadeServico(
             IImportacaoTerceiroRepositorio<Modalidade> repositorio,
-            MensagemServico mensagens)
+            MensagemServico mensagens) : base(repositorio, mensagens)
         {
-            _repositorio = repositorio;
             _pncp = new Pncp();
-            _mensagens = mensagens;
         }
 
         public async Task<bool> ImportarAsync()
         {
             try
             {
-                _mensagens.Limpar();
+                Mensagens.Limpar();
 
                 var json = await _pncp.GetFiltros();
 
@@ -40,7 +36,7 @@ namespace RadarGov.Dominio.Servicos
 
                 if (filtros?.Filters?.Modalidades == null || !filtros.Filters.Modalidades.Any())
                 {
-                    _mensagens.Adicionar("Nenhuma modalidade encontrada para importação.", TipoMensagem.Aviso);
+                    Mensagens.Adicionar("Nenhuma modalidade encontrada para importação.", TipoMensagem.Aviso);
                     return false;
                 }
 
@@ -49,13 +45,13 @@ namespace RadarGov.Dominio.Servicos
 
                 foreach (var item in filtros.Filters.Modalidades)
                 {
-                    var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
+                    var existente = await Repositorio.ObterPorIdTerceiroAsync(item.Id);
 
                     if (existente == null)
                     {
                         // Não existe ainda - cria uma nova
                         var nova = new Modalidade(item.Id, item.Nome);
-                        await _repositorio.AddAsync(nova);
+                        await Repositorio.AddAsync(nova);
                         novas++;
                     }
                     else
@@ -64,15 +60,15 @@ namespace RadarGov.Dominio.Servicos
                         if (!string.Equals(existente.Nome, item.Nome, StringComparison.OrdinalIgnoreCase))
                         {
                             existente.Nome = item.Nome;
-                            await _repositorio.UpdateAsync(existente);
+                            await Repositorio.UpdateAsync(existente);
                             atualizadas++;
                         }
                     }
                 }
 
-                await _repositorio.SaveChangesAsync();
+                await Repositorio.SaveChangesAsync();
 
-                _mensagens.Adicionar(
+                Mensagens.Adicionar(
                     $"Importação concluída. {novas} novas modalidades adicionadas e {atualizadas} atualizadas.",
                     TipoMensagem.Sucesso);
 
@@ -80,7 +76,7 @@ namespace RadarGov.Dominio.Servicos
             }
             catch (Exception ex)
             {
-                _mensagens.Adicionar($"Erro ao importar modalidades: {ex.Message}", TipoMensagem.Erro);
+                Mensagens.Adicionar($"Erro ao importar modalidades: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }
         }

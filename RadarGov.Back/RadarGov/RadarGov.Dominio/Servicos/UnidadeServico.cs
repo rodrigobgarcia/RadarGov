@@ -8,24 +8,20 @@ using System.Text.Json;
 
 namespace RadarGov.Dominio.Servicos
 {
-    public class UnidadeServico
+    public class UnidadeServico : BaseTerceiroServico<Unidade>
     {
-        private readonly IImportacaoTerceiroRepositorio<Unidade> _repositorio;
         private readonly Pncp _pncp;
-        private readonly MensagemServico _mensagens;
 
-        public UnidadeServico(IImportacaoTerceiroRepositorio<Unidade> repositorio, MensagemServico mensagens)
+        public UnidadeServico(IImportacaoTerceiroRepositorio<Unidade> repositorio, MensagemServico mensagens): base(repositorio, mensagens)
         {
-            _repositorio = repositorio;
             _pncp = new Pncp();
-            _mensagens = mensagens;
         }
 
         public async Task<bool> ImportarAsync()
         {
             try
             {
-                _mensagens.Limpar();
+                Mensagens.Limpar();
 
                 var json = await _pncp.GetFiltros();
 
@@ -38,7 +34,7 @@ namespace RadarGov.Dominio.Servicos
 
                 if (filtros?.Filters?.Unidades == null || !filtros.Filters.Unidades.Any())
                 {
-                    _mensagens.Adicionar("Nenhuma unidade encontrada para importação.", TipoMensagem.Aviso);
+                    Mensagens.Adicionar("Nenhuma unidade encontrada para importação.", TipoMensagem.Aviso);
                     return false;
                 }
 
@@ -47,13 +43,13 @@ namespace RadarGov.Dominio.Servicos
 
                 foreach (var item in filtros.Filters.Unidades)
                 {
-                    var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
+                    var existente = await Repositorio.ObterPorIdTerceiroAsync(item.Id);
 
                     if (existente == null)
                     {
                         // Não existe ainda - cria uma nova
                         var nova = new Unidade(item.Id, item.Nome, item.Codigo, item.CodigoNome);
-                        await _repositorio.AddAsync(nova);
+                        await Repositorio.AddAsync(nova);
                         novas++;
                     }
                     else
@@ -66,15 +62,15 @@ namespace RadarGov.Dominio.Servicos
                             existente.Nome = item.Nome;
                             existente.Codigo = item.Codigo;
                             existente.CodigoNome = item.CodigoNome;
-                            await _repositorio.UpdateAsync(existente);
+                            await Repositorio.UpdateAsync(existente);
                             atualizadas++;
                         }
                     }
                 }
 
-                await _repositorio.SaveChangesAsync();
+                await Repositorio.SaveChangesAsync();
 
-                _mensagens.Adicionar(
+                Mensagens.Adicionar(
                     $"Importação concluída. {novas} novas unidades adicionadas e {atualizadas} atualizadas.",
                     TipoMensagem.Sucesso);
 
@@ -82,7 +78,7 @@ namespace RadarGov.Dominio.Servicos
             }
             catch (Exception ex)
             {
-                _mensagens.Adicionar($"Erro ao importar unidade: {ex.Message}", TipoMensagem.Erro);
+                Mensagens.Adicionar($"Erro ao importar unidade: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }
         }

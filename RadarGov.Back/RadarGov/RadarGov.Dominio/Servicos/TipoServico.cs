@@ -4,33 +4,24 @@ using RadarGov.Dominio.Interfaces;
 using RadarGov.Dominio.Notificacoes.Entidades;
 using RadarGov.Dominio.Notificacoes.Servicos;
 using RadarGov.Integracoes.Pnc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace RadarGov.Dominio.Servicos
 {
-    public class TipoServico
+    public class TipoServico : BaseTerceiroServico<Tipo>
     {
-        private readonly IImportacaoTerceiroRepositorio<Tipo> _repositorio;
         private readonly Pncp _pncp;
-        private readonly MensagemServico _mensagens;
 
-        public TipoServico(IImportacaoTerceiroRepositorio<Tipo> repositorio, MensagemServico mensagens)
+        public TipoServico(IImportacaoTerceiroRepositorio<Tipo> repositorio, MensagemServico mensagens) : base(repositorio, mensagens)
         {
-            this._repositorio = repositorio;
-            this._pncp = new Pncp();
-            this._mensagens = mensagens;
+            _pncp = new Pncp();
         }
 
         public async Task<bool> ImportarAsync()
         {
             try
             {
-                _mensagens.Limpar();
+                Mensagens.Limpar();
 
                 var json = await _pncp.GetFiltros();
 
@@ -43,7 +34,7 @@ namespace RadarGov.Dominio.Servicos
 
                 if (filtros?.Filters?.Tipos ==  null || !filtros.Filters.Tipos.Any())
                 {
-                    _mensagens.Adicionar($"Nenhum tipo encontrado para importação.", TipoMensagem.Aviso);
+                    Mensagens.Adicionar($"Nenhum tipo encontrado para importação.", TipoMensagem.Aviso);
                     return false;
                 }
 
@@ -52,12 +43,12 @@ namespace RadarGov.Dominio.Servicos
 
                 foreach (var item in filtros.Filters.Tipos)
                 {
-                    var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
+                    var existente = await Repositorio.ObterPorIdTerceiroAsync(item.Id);
 
                     if (existente == null)
                     {
                         var nova = new Tipo(item.Id, item.Nome);
-                        await _repositorio.AddAsync(nova);
+                        await Repositorio.AddAsync(nova);
                         novas++;
                     }
                     else
@@ -65,15 +56,15 @@ namespace RadarGov.Dominio.Servicos
                         if (!string.Equals(existente.Nome, item.Nome, StringComparison.OrdinalIgnoreCase))
                         {
                             existente.Nome = item.Nome;
-                            await _repositorio.UpdateAsync(existente);
+                            await Repositorio.UpdateAsync(existente);
                             atualizadas++;
                         }
                     }
                 }
 
-                await _repositorio.SaveChangesAsync();
+                await Repositorio.SaveChangesAsync();
 
-                _mensagens.Adicionar(
+                Mensagens.Adicionar(
                     $"Importação concluída. {novas} novos tipos adiconados e {atualizadas} atualizados.",
                     TipoMensagem.Sucesso);
 
@@ -81,7 +72,7 @@ namespace RadarGov.Dominio.Servicos
             }
             catch (Exception ex)
             {
-                _mensagens.Adicionar($"Erro ao importar tipos: {ex.Message}", TipoMensagem.Erro);
+                Mensagens.Adicionar($"Erro ao importar tipos: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }
         }

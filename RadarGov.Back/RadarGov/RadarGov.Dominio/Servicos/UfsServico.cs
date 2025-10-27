@@ -8,24 +8,20 @@ using System.Text.Json;
 
 namespace RadarGov.Dominio.Servicos
 {
-    public class UfsServico
+    public class UfsServico : BaseTerceiroServico<Ufs>
     {
-        private readonly IImportacaoTerceiroRepositorio<Ufs> _repositorio;
         private readonly Pncp _pncp;
-        private readonly MensagemServico _mensagens;
 
-        public UfsServico(IImportacaoTerceiroRepositorio<Ufs> repositorio, MensagemServico mensagens)
+        public UfsServico(IImportacaoTerceiroRepositorio<Ufs> repositorio, MensagemServico mensagens) : base(repositorio, mensagens)
         {
-            _repositorio = repositorio;
             _pncp = new Pncp();
-            _mensagens = mensagens;
         }
 
         public async Task<bool> ImportarAsync()
         {
             try
             {
-                _mensagens.Limpar();
+                Mensagens.Limpar();
 
                 var json = await _pncp.GetFiltros();
 
@@ -38,7 +34,7 @@ namespace RadarGov.Dominio.Servicos
 
                 if (filtros?.Filters?.Ufs == null || !filtros.Filters.Ufs.Any())
                 {
-                    _mensagens.Adicionar("Nenhum UF encontrado para importação.", TipoMensagem.Aviso);
+                    Mensagens.Adicionar("Nenhum UF encontrado para importação.", TipoMensagem.Aviso);
                     return false;
                 }
 
@@ -47,13 +43,13 @@ namespace RadarGov.Dominio.Servicos
 
                 foreach (var item in filtros.Filters.Ufs)
                 {
-                    var existente = await _repositorio.ObterPorIdTerceiroAsync(item.Id);
+                    var existente = await Repositorio.ObterPorIdTerceiroAsync(item.Id);
 
                     if (existente == null)
                     {
                         // Não existe ainda - cria uma nova
                         var nova = new Ufs(item.Id);
-                        await _repositorio.AddAsync(nova);
+                        await Repositorio.AddAsync(nova);
                         novas++;
                     }
                     else
@@ -62,15 +58,15 @@ namespace RadarGov.Dominio.Servicos
                         if (!string.Equals(existente.IdTerceiro, item.Id, StringComparison.OrdinalIgnoreCase))
                         {
                             existente.IdTerceiro = item.Id;
-                            await _repositorio.UpdateAsync(existente);
+                            await Repositorio.UpdateAsync(existente);
                             atualizadas++;
                         }
                     }
                 }
 
-                await _repositorio.SaveChangesAsync();
+                await Repositorio.SaveChangesAsync();
 
-                _mensagens.Adicionar(
+                Mensagens.Adicionar(
                     $"Importação concluída. {novas} novas UFs adicionadas e {atualizadas} atualizadas.",
                     TipoMensagem.Sucesso);
 
@@ -78,7 +74,7 @@ namespace RadarGov.Dominio.Servicos
             }
             catch (Exception ex)
             {
-                _mensagens.Adicionar($"Erro ao importar UFs: {ex.Message}", TipoMensagem.Erro);
+                Mensagens.Adicionar($"Erro ao importar UFs: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }
         }
