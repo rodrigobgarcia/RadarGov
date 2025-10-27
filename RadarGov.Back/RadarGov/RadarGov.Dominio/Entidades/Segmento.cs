@@ -1,20 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RadarGov.Dominio.Entidades
+﻿namespace RadarGov.Dominio.Entidades
 {
-    public class Segmento
+    public class Segmento: EntidadeBase
     {
-        public int Id;
+        public string Id;
 
         public string Nome;
 
-        public Segmento(int id, string nome) {
-            this.Id = id;
-            this.Nome = nome;
+        public Segmento(string id, string nome)
+        {
+            Id = id;
+            Nome = nome;
+            CriadoEm = DateTime.Now;
+            UltimaAlteracao = DateTime.Now;
         }
+
+        private Segmento() { }
     }
 }
