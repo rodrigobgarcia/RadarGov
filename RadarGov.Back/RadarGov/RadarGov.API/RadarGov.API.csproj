@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RadarGov.Infraestrutura\RadarGov.Infraestrutura.csproj" />
+    <ProjectReference Include="..\RadarGov.Integracoes\RadarGov.Integracoes.csproj" />
   </ItemGroup>
 
 </Project>
