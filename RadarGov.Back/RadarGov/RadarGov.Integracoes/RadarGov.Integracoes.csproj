@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.AIPlatform.V1" Version="3.53.0" />
+    <PackageReference Include="Google.GenAI" Version="0.3.0" />
+  </ItemGroup>
+
 </Project>
