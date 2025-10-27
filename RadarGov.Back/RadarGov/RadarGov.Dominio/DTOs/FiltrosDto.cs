@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace RadarGov.Dominio.DTOs
+﻿namespace RadarGov.Dominio.DTOs
 {
     public class FiltrosDto
     {
