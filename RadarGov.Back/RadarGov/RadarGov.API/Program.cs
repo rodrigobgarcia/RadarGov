@@ -1,10 +1,12 @@
-using Quartz;
-using RadarGov.Infraestrutura;
 using Microsoft.EntityFrameworkCore;
+using Quartz;
 using RadarGov.Dominio.Entidades;
 using RadarGov.Dominio.Interfaces;
+using RadarGov.Dominio.IReposoitorio;
 using RadarGov.Dominio.Notificacoes.Servicos;
 using RadarGov.Dominio.Servicos;
+using RadarGov.Infraestrutura;
+using RadarGov.Infraestrutura.Interfaces;
 using RadarGov.Infraestrutura.Repositorios;
 using RadarGov.Integracoes.Pnc;
 using RadarGov.Integracoes.Gemini;
@@ -55,6 +57,10 @@ namespace RadarGov.API
             builder.Services.AddScoped<IImportacaoTerceiroRepositorio<FonteOrcamentaria>, ImportacaoTerceiroRepositorio<FonteOrcamentaria>>();
             builder.Services.AddScoped<MensagemServico>();
             builder.Services.AddHttpClient<Pncp>();
+            builder.Services.AddScoped<UsuarioServico>();
+            builder.Services.AddScoped<EmpresaServico>();
+            builder.Services.AddScoped(typeof(IBaseRepositorio<>), typeof(BaseRepositorio<>));
+            builder.Services.AddScoped<IBaseValidacao, BaseValidacao>();
 
             builder.Services.AddSingleton(new GeminiApiClient(apiKey));
             builder.Services.AddScoped<SegmentoClassifierService>();

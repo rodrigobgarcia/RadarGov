@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Opportunities from '@/views/Opportunities.vue'
 import LoginView  from '@/views/LoginView.vue'
-import Modalidade from '@/views/Modalidade.vue'
+import CadastroEmpresa from '@/views/CadastroEmpresa.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,9 +23,9 @@ const router = createRouter({
       component: LoginView
     },
     {
-      path: '/modalidade',
-      name: 'modalidade',
-      component: Modalidade
+      path: '/cadastroEmpresa',
+      name: 'cadastroEmpresa',
+      component: CadastroEmpresa
     },
     {
       path: '/about',

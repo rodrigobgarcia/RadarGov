@@ -13,6 +13,8 @@ public partial class RadarGovDbContext : DbContext
     public DbSet<Poder> Poderes { get; set; }
     public DbSet<Tipo> Tipos { get; set; }
     public DbSet<Esfera> Esferas { get; set; }
+    public DbSet<Empresa> Empresas { get; set; }
+    public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<TipoMargemPreferencia> TiposMargemPreferencia { get; set; }
 
     public DbSet<FonteOrcamentaria> FontesOrcamentarias { get; set; }
