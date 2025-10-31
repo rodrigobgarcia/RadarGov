@@ -23,5 +23,10 @@ namespace RadarGov.Dominio.Entidades
             this.Empresa = empresa;
             this.Permissoes = permissoes;
         }
+
+        private Usuario()
+        {
+
+        }
     }
 }
