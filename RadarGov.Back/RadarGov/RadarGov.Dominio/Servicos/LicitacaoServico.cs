@@ -192,6 +192,7 @@ namespace RadarGov.Dominio.Servicos
             }
             catch (Exception ex)
             {
+
                 _mensagens.Adicionar($"Erro grave ao processar a importação de licitações: {ex.Message}", TipoMensagem.Erro);
                 return false;
             }

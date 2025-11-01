@@ -64,7 +64,7 @@ namespace RadarGov.API.Controllers
 
             if (!response)
             {
-                return BadRequest(mensagens);
+                return BadRequest(_mensagens.ObterErros());
             }
 
             else

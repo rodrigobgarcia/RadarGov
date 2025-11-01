@@ -7,12 +7,12 @@ const route = useRoute()
 </script>
 
 <template>
-    <NavBar v-if="route.path === '/' && route.path !== '/login'" />
-    <SideMenu v-if="route.path !== '/' && route.path !== '/login'" />
+    <!-- <NavBar v-if="route.path === '/' && route.path !== '/login'" />-->
+    <!-- <SideMenu v-if="route.path !== '/' && route.path !== '/login'" />  -->
 
-    <main :class="route.path === '/' ? 'pt-16' : route.path !== '/login'?  'ml-[70px]' : ''">
-        <RouterView />
-    </main>
+    <RouterView />
+    <!-- <main :class="route.path === '/' ? 'pt-16' : route.path !== '/login'?  'ml-[70px]' : ''"> -->
+    <!-- </main> -->
 </template>
 
 <style scoped>

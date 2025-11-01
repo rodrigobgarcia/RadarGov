@@ -11,21 +11,23 @@ namespace RadarGov.Infraestrutura.Repositorios
     {
         public bool ValidateNome(string nome)
         {
-
+            return false;
         }
 
         public bool ValidateEmail(string email)
         {
+            return false;
 
         }
 
         public bool ValidatePassword(string password)
         {
-
+            return false;
         }
 
         public bool ValidateCnpj(string cnpj)
         {
+            return false;
 
         }
     }

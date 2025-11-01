@@ -3,13 +3,13 @@
     <!-- MENU LATERAL -->
     <aside
       class="fixed top-0 left-0 h-screen bg-white flex flex-col items-center z-40 shadow-md overflow-hidden"
-      :class="isCollapsed ? 'w-[70px]' : 'w-[185px]'"
+      :class="isCollapsed ? 'w-[70px]' : 'w-[220px]'"
     >
       <div class="flex items-center justify-center w-full py-6">
         <img
           :src="isCollapsed ? LogoMini : Logo"
           alt="RadarGov"
-          class="h-10 w-auto px-[16px] transition-all duration-200 ease-in-out"
+          class="h-10 w-auto px-[10px] transition-all duration-200 ease-in-out"
         />
       </div>
 
@@ -24,11 +24,11 @@
         >
           <component
             :is="item.icon"
-            class="w-5 h-5 min-w-[20px] transition-transform duration-200 ease-in-out"
+            class="w-5 h-5 min-w-[20px] transition-transform duration-200 ease-in-out text-[#1f5405]"
           />
           <span
-            class="whitespace-nowrap text-sm font-medium transition-all duration-200 ease-in-out overflow-hidden"
-            :style="{ maxWidth: isCollapsed ? '0px' : '200px', opacity: isCollapsed ? 0 : 1 }"
+            class="whitespace-nowrap text-sm font-medium transition-all duration-200 ease-in-out overflow-hidden text-[#1f5405]"
+            :style="{ maxWidth: isCollapsed ? '0px' : '220px', opacity: isCollapsed ? 0 : 1 }"
           >
             {{ item.label }}
           </span>
@@ -51,7 +51,7 @@
     <button
       @click="toggleMenu"
       class="fixed top-1/2 -translate-y-1/2 transition-all duration-200 ease-in-out bg-white hover:bg-[#F3F6FC] border border-[#253b7f] text-[#253b7f] hover:text-[#253b7f] p-1.5 rounded-full flex items-center justify-center z-50"
-      :class="isCollapsed ? 'left-[50px]' : 'left-[165px]'"
+      :class="isCollapsed ? 'left-[50px]' : 'left-[200px]'"
       style="transform-origin: center;"
       title="Alternar menu"
     >
@@ -68,7 +68,7 @@ import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import { Home, Calendar, ClipboardList, Users, History, LogOut, ChevronLeft } from 'lucide-vue-next'
 import Logo from '../assets/logo.png'
-import LogoMini from '../assets/logo_mini.png'
+import LogoMini from '../assets/image.png'
 
 const isCollapsed = ref(true)
 const toggleMenu = () => (isCollapsed.value = !isCollapsed.value)

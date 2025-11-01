@@ -1,8 +1,8 @@
 <template>
     <div class="relative">
         <div class="absolute inset-0 min-h-screen  w-full flex items-center justify-center  bg-cover bg-center bg-no-repeat"
-            :style="{ backgroundImage: 'url(/RadarGov/empresa.jpg)' }">
-            <div class="absolute inset-0 opacity-40 bg-gradient-to-br from-gray-900 via-green-950 to-gray-900"></div>
+            :style="{ backgroundImage: 'url(/RadarGov/martelo3.jpg)' }">
+            <div class="absolute inset-0 opacity-30 bg-gradient-to-br from-gray-900 via-[#002200] to-gray-900"></div>
             <div class="w-full max-w-md backdrop-blur-xl bg-white/10 rounded-3xl p-8 shadow-2xl border border-white/20">
                 <div class="flex justify-center mb-8">
                     <div
