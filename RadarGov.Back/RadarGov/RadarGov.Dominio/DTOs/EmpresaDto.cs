@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RSK.Dominio.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RadarGov.Dominio.DTOs
 {
-    public class EmpresaDto
+    public class EmpresaDto : EntidadeBase
     {
         public string Nome { get; set; }
         public string Cnpj { get; set; }

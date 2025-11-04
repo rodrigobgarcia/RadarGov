@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarGov.API", "RadarGov.API\RadarGov.API.csproj", "{672C5508-99AE-4076-9C27-1EF7B193AED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadarGov.API", "RadarGov.API\RadarGov.API.csproj", "{672C5508-99AE-4076-9C27-1EF7B193AED4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarGov.Dominio", "RadarGov.Dominio\RadarGov.Dominio.csproj", "{3259525E-40D1-4196-B482-3E9EDFFC5650}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadarGov.Dominio", "RadarGov.Dominio\RadarGov.Dominio.csproj", "{3259525E-40D1-4196-B482-3E9EDFFC5650}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarGov.Integracoes", "RadarGov.Integracoes\RadarGov.Integracoes.csproj", "{BA5E6C97-36A7-4F75-9831-1C5755567600}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadarGov.Integracoes", "RadarGov.Integracoes\RadarGov.Integracoes.csproj", "{BA5E6C97-36A7-4F75-9831-1C5755567600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RadarGov.Infraestrutura", "RadarGov.Infraestrutura\RadarGov.Infraestrutura.csproj", "{6D4C5B69-06E3-460C-B375-A4F4EAA5E133}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RadarGov.Infraestrutura", "RadarGov.Infraestrutura\RadarGov.Infraestrutura.csproj", "{6D4C5B69-06E3-460C-B375-A4F4EAA5E133}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RSK", "RSK", "{E006282B-068B-4B34-B510-674C7E5446BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSK.Dominio", "..\..\..\RSK\RSK.Dominio\RSK.Dominio.csproj", "{B4F627B2-A0DA-48F3-96C5-96E45199E337}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +29,6 @@ Global
 		{3259525E-40D1-4196-B482-3E9EDFFC5650}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3259525E-40D1-4196-B482-3E9EDFFC5650}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3259525E-40D1-4196-B482-3E9EDFFC5650}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE7E7603-952B-4D1E-902E-645D34107CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE7E7603-952B-4D1E-902E-645D34107CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE7E7603-952B-4D1E-902E-645D34107CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE7E7603-952B-4D1E-902E-645D34107CC4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BA5E6C97-36A7-4F75-9831-1C5755567600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BA5E6C97-36A7-4F75-9831-1C5755567600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA5E6C97-36A7-4F75-9831-1C5755567600}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,9 +37,16 @@ Global
 		{6D4C5B69-06E3-460C-B375-A4F4EAA5E133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D4C5B69-06E3-460C-B375-A4F4EAA5E133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D4C5B69-06E3-460C-B375-A4F4EAA5E133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F627B2-A0DA-48F3-96C5-96E45199E337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F627B2-A0DA-48F3-96C5-96E45199E337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F627B2-A0DA-48F3-96C5-96E45199E337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F627B2-A0DA-48F3-96C5-96E45199E337}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B4F627B2-A0DA-48F3-96C5-96E45199E337} = {E006282B-068B-4B34-B510-674C7E5446BD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {31190403-61B4-4F8D-82DC-655E86AA613B}

@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\RSK\RSK.Dominio\RSK.Dominio.csproj" />
     <ProjectReference Include="..\RadarGov.Integracoes\RadarGov.Integracoes.csproj" />
   </ItemGroup>
 

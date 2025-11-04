@@ -7,7 +7,7 @@ namespace RadarGov.Integracoes.Pnc
     public class Pncp
     {
         private readonly HttpClient _httpClient;
-        private readonly string _baseUrl = "https://pncp.gov.br";
+        private readonly string _baseUrl = "https://localhost:7203";
 
         public Pncp()
         {
@@ -46,7 +46,7 @@ namespace RadarGov.Integracoes.Pnc
         {
             try
             {
-                return await GetAsync("/api/search/filters?tipos_documento=edital");
+                return await GetAsync("/api/Modalidade");
             }
             catch (Exception ex)
             {

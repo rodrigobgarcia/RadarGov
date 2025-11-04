@@ -1,14 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using Quartz;
-using RadarGov.Dominio.Entidades;
-using RadarGov.Dominio.Interfaces;
-using RadarGov.Dominio.IReposoitorio;
-using RadarGov.Dominio.Notificacoes.Servicos;
-using RadarGov.Dominio.Servicos;
 using RadarGov.Infraestrutura;
-using RadarGov.Infraestrutura.Interfaces;
-using RadarGov.Infraestrutura.Repositorios;
-using RadarGov.Integracoes.Pnc;
 using RadarGov.Integracoes.Gemini;
 
 namespace RadarGov.API
@@ -35,33 +25,7 @@ namespace RadarGov.API
             //);
             var apiKey = builder.Configuration["GoogleApi:ApiKey"];
 
-            builder.Services.AddScoped<ModalidadeServico>();
-            builder.Services.AddScoped<MunicipioServico>();
-            builder.Services.AddScoped<OrgaoServico>();
-            builder.Services.AddScoped<UnidadeServico>();
-            builder.Services.AddScoped<UfsServico>();
-            builder.Services.AddScoped<PoderServico>();
-            builder.Services.AddScoped<TipoServico>();
-            builder.Services.AddScoped<EsferaServico>();
-            builder.Services.AddScoped<TipoMargemPreferenciaServico>();
-            builder.Services.AddScoped<FonteOrcamentariaServico>();
-            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Modalidade>, ImportacaoTerceiroRepositorio<Modalidade>>();
-            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Orgao>, ImportacaoTerceiroRepositorio<Orgao>>();
-            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Unidade>, ImportacaoTerceiroRepositorio<Unidade>>();
-            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Ufs>, ImportacaoTerceiroRepositorio<Ufs>>();
-            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Municipio>, ImportacaoTerceiroRepositorio<Municipio>>();
-            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Poder>, ImportacaoTerceiroRepositorio<Poder>>();
-            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Tipo>, ImportacaoTerceiroRepositorio<Tipo>>();
-            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<Esfera>, ImportacaoTerceiroRepositorio<Esfera>>();
-            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<TipoMargemPreferencia>, ImportacaoTerceiroRepositorio<TipoMargemPreferencia>>();
-            builder.Services.AddScoped<IImportacaoTerceiroRepositorio<FonteOrcamentaria>, ImportacaoTerceiroRepositorio<FonteOrcamentaria>>();
-            builder.Services.AddScoped<MensagemServico>();
-            builder.Services.AddHttpClient<Pncp>();
-            builder.Services.AddScoped<UsuarioServico>();
-            builder.Services.AddScoped<EmpresaServico>();
-            builder.Services.AddScoped(typeof(IBaseRepositorio<>), typeof(BaseRepositorio<>));
-            builder.Services.AddScoped<IBaseValidacao, BaseValidacao>();
-
+            
             builder.Services.AddSingleton(new GeminiApiClient(apiKey));
             builder.Services.AddScoped<SegmentoClassifierService>();
 
