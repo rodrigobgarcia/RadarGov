@@ -16,7 +16,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\RSK\RSK.Infraestrutura\RSK.Infraestrutura.csproj" />
     <ProjectReference Include="..\RadarGov.Dominio\RadarGov.Dominio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

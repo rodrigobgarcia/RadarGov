@@ -5,19 +5,8 @@ namespace RadarGov.Infraestrutura;
 
 public partial class RadarGovDbContext : DbContext
 {
-    public DbSet<Modalidade> Modalidades { get; set; }
-    public DbSet<Orgao> Orgaos { get; set; }
-    public DbSet<Unidade> Unidades { get; set; }
-    public DbSet<Ufs> Ufs { get; set; }
-    public DbSet<Municipio> Municipios { get; set; }
-    public DbSet<Poder> Poderes { get; set; }
-    public DbSet<Tipo> Tipos { get; set; }
-    public DbSet<Esfera> Esferas { get; set; }
     public DbSet<Empresa> Empresas { get; set; }
-    public DbSet<Usuario> Usuarios { get; set; }
-    public DbSet<TipoMargemPreferencia> TiposMargemPreferencia { get; set; }
-
-    public DbSet<FonteOrcamentaria> FontesOrcamentarias { get; set; }
+    
     public RadarGovDbContext()
     {
     }

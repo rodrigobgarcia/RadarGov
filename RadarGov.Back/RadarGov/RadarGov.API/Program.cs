@@ -1,5 +1,19 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using RadarGov.Dominio.Entidades;
+using RadarGov.Dominio.Servicos;
 using RadarGov.Infraestrutura;
+using RadarGov.Infraestrutura.Repositorios;
 using RadarGov.Integracoes.Gemini;
+using RSK.API.Extensoes;
+using RSK.Dominio.IRepositorios;
+using RSK.Dominio.Notificacoes.Interfaces;
+using RSK.Dominio.Notificacoes.Servicos;
+using RSK.Infraestrutura.Dados;
+using RSK.Infraestrutura.Repositorios;
+using System.Text;
 
 namespace RadarGov.API
 {
@@ -9,20 +23,6 @@ namespace RadarGov.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            //builder.Services.RegisterFromNamespaces(
-            //    assemblies: new[]
-            //    {
-            //        "RadarGov.Dominio",
-            //        "RadarGov.Infraestrutura"
-            //    },
-            //    namespaces: new[]
-            //    {
-            //        "RadarGov.Dominio.Servicos",
-            //        "RadarGov.Dominio.Notificacoes.Servicos",
-            //        "RadarGov.Infraestrutura.Repositorios"
-            //    },
-            //    enableLogging: true
-            //);
             var apiKey = builder.Configuration["GoogleApi:ApiKey"];
 
             
@@ -30,16 +30,82 @@ namespace RadarGov.API
             builder.Services.AddScoped<SegmentoClassifierService>();
 
 
-            // Add services to the container.
-            builder.Services.AddControllers();
+            
 
-            // Adiciona DbContext com connection string do appsettings.json
+            var configuration = builder.Configuration;
+
+            // ======= DbContext =======
             builder.Services.AddDbContext<RadarGovDbContext>(options =>
                 options.UseMySql(
-                    builder.Configuration.GetConnectionString("RadarGovDb"),
-                    ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("RadarGovDb"))
+                    configuration.GetConnectionString("RadarGovDb"),
+                    ServerVersion.AutoDetect(configuration.GetConnectionString("RadarGovDb"))
                 )
             );
+
+
+            // ======= CORS =======
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+            });
+
+            // ======= JWT Authentication =======
+            var jwtKey = configuration["Jwt:Key"];
+            var jwtIssuer = configuration["Jwt:Issuer"];
+            var jwtAudience = configuration["Jwt:Audience"];
+
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtIssuer,
+                    ValidAudience = jwtAudience,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+                };
+            });
+
+            // ======= Serviços de domínio =======
+            builder.Services.AddScoped<EmpresaServico>();
+
+
+            builder.Services.AddScoped<IRepositorioBaseAssincrono<Empresa>, RepositorioBaseAssincrono<Empresa, RadarGovDbContext>>();
+            
+            
+            // ======= Repositórios e serviços base =======
+            builder.Services.AddScoped(typeof(IRepositorioBaseAssincrono<>), typeof(RepositorioBaseRadarGov<>));
+
+
+            // Registra a classe concreta
+            builder.Services.AddScoped<ServicoMensagem>();
+
+            // Ambas as interfaces usam a mesma instância
+            builder.Services.AddScoped<IServicoMensagem>(sp => sp.GetRequiredService<ServicoMensagem>());
+            builder.Services.AddScoped<INotificador>(sp => sp.GetRequiredService<ServicoMensagem>());
+
+
+            // ======= Transação =======
+            builder.Services.AddScoped<ITransacao, TransacaoEF<RadarGovDbContext>>();
+
+
+            // ======= Serviços RSK =======
+            builder.Services.AdicionarServicosRSK();
+
+            // Add services to the container.
+            builder.Services.AddControllers();
 
             // Configura Quartz
             //builder.Services.AddQuartz(q =>

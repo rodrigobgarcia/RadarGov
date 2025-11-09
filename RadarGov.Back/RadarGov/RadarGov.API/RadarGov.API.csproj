@@ -11,9 +11,13 @@
     <PackageReference Include="Quartz.Extensions.DependencyInjection" Version="3.15.0" />
     <PackageReference Include="Quartz.Extensions.Hosting" Version="3.15.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+	<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.11" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.10" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\RSK\RSK.API\RSK.API.csproj" />
+    <ProjectReference Include="..\..\..\..\RSK\RSK.Infraestrutura\RSK.Infraestrutura.csproj" />
     <ProjectReference Include="..\RadarGov.Infraestrutura\RadarGov.Infraestrutura.csproj" />
     <ProjectReference Include="..\RadarGov.Integracoes\RadarGov.Integracoes.csproj" />
   </ItemGroup>
