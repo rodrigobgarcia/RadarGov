@@ -1,11 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RadarGov.Dominio.Entidades;
+using RSK.Dominio.Autorizacao.Entidades;
 
 namespace RadarGov.Infraestrutura;
 
 public partial class RadarGovDbContext : DbContext
 {
     public DbSet<Empresa> Empresas { get; set; }
+    public DbSet<UsuarioBase> UsuarioBase { get; set; }
+    public DbSet<Licitacao> Licitacao { get; set; }
     
     public RadarGovDbContext()
     {

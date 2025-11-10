@@ -19,8 +19,8 @@
           v-for="item in menuItems"
           :key="item.to"
           :to="item.to"
-          class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#F3F6FC] transition-all duration-200 ease-in-out"
-          active-class="bg-[#253b7f] text-white"
+          class="flex items-center gap-3 p-3 rounded-lg text-gray-700 hover:bg-[#eef0e8] transition-all duration-200 ease-in-out"
+          active-class="bg-[#E5EDD8] text-white"
         >
           <component
             :is="item.icon"
@@ -50,7 +50,7 @@
     <!-- BOTÃO DE SETA CENTRAL -->
     <button
       @click="toggleMenu"
-      class="fixed top-1/2 -translate-y-1/2 transition-all duration-200 ease-in-out bg-white hover:bg-[#F3F6FC] border border-[#253b7f] text-[#253b7f] hover:text-[#253b7f] p-1.5 rounded-full flex items-center justify-center z-50"
+      class="fixed top-1/2 -translate-y-1/2 transition-all duration-200 ease-in-out bg-white hover:bg-[#eef0e8] border border-[#1f5405] text-[#1f5405] hover:text-[#E5EDD8] p-1.5 rounded-full flex items-center justify-center z-50"
       :class="isCollapsed ? 'left-[50px]' : 'left-[200px]'"
       style="transform-origin: center;"
       title="Alternar menu"

@@ -1,19 +1,33 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.OData;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using RadarGov.Dominio.Entidades;
-using RadarGov.Dominio.Servicos;
-using RadarGov.Infraestrutura;
-using RadarGov.Infraestrutura.Repositorios;
-using RadarGov.Integracoes.Gemini;
+using Microsoft.OData.Edm;
+using Microsoft.OData.ModelBuilder;
 using RSK.API.Extensoes;
+using RSK.Dominio.Autorizacao.Interfaces;
+using RSK.Dominio.Autorizacao.Servicos;
+using RSK.Dominio.Entidades;
+using RSK.Dominio.Interfaces;
 using RSK.Dominio.IRepositorios;
 using RSK.Dominio.Notificacoes.Interfaces;
 using RSK.Dominio.Notificacoes.Servicos;
+using RSK.Dominio.Servicos;
 using RSK.Infraestrutura.Dados;
 using RSK.Infraestrutura.Repositorios;
+using RSK.Infraestrutura.Servicos;
 using System.Text;
+using RSK.Dominio.Autorizacao.Entidades;
+using Microsoft.OpenApi.Models;
+using Quartz;
+using RadarGov.Dominio.Entidades;
+using RadarGov.Infraestrutura;
+using RadarGov.Infraestrutura.Repositorios;
+using RadarGov.Dominio.Servicos;
+using RadarGov.API.Extensoes;
+using RadarGov.Dominio.Interfaces;
+using RadarGov.Integracoes.RadarHub;
+
 
 namespace RadarGov.API
 {
@@ -22,15 +36,6 @@ namespace RadarGov.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
-            var apiKey = builder.Configuration["GoogleApi:ApiKey"];
-
-            
-            builder.Services.AddSingleton(new GeminiApiClient(apiKey));
-            builder.Services.AddScoped<SegmentoClassifierService>();
-
-
-            
 
             var configuration = builder.Configuration;
 
@@ -41,7 +46,6 @@ namespace RadarGov.API
                     ServerVersion.AutoDetect(configuration.GetConnectionString("RadarGovDb"))
                 )
             );
-
 
             // ======= CORS =======
             builder.Services.AddCors(options =>
@@ -78,56 +82,127 @@ namespace RadarGov.API
                 };
             });
 
-            // ======= Serviços de domínio =======
+            // ======= Serviï¿½os de domï¿½nio =======
             builder.Services.AddScoped<EmpresaServico>();
+            builder.Services.AddScoped<LicitacaoRecomendacaoServico>();
+
+
+            // ======= Agendamentos ========
+            builder.Services.AddQuartz(); // Registra Quartz
+            builder.Services.AddQuartzHostedService(options => options.WaitForJobsToComplete = true);
+
+            //builder.Services.AdicionarJobServico<ModalidadeServico>(
+            //    nomeJob: "ImportacaoModalidades",
+            //    metodo: "ImportarAsync",
+            //    tipoAgendamento: TipoAgendamento.Semanal,
+            //    horaInicio: new TimeOnly(3, 0)
+            //);
+
 
 
             builder.Services.AddScoped<IRepositorioBaseAssincrono<Empresa>, RepositorioBaseAssincrono<Empresa, RadarGovDbContext>>();
-            
-            
-            // ======= Repositórios e serviços base =======
+
+            // ======= Repositï¿½rios e serviï¿½os base =======
             builder.Services.AddScoped(typeof(IRepositorioBaseAssincrono<>), typeof(RepositorioBaseRadarGov<>));
+            builder.Services.AddScoped(typeof(IServicoConsultaBase<>), typeof(ServicoConsultaBase<>));
+            builder.Services.AddScoped(typeof(IServicoCrudBase<>), typeof(ServicoCrudBase<>));
+            builder.Services.AddScoped(typeof(IServicoImportacaoTerceiro<>), typeof(ServicoImportacaoTerceiro<>));
+
+            // ======= Notificaï¿½ï¿½es =======
+            builder.Services.AddScoped<IServicoUsuario, ServicoUsuario>();
+            builder.Services.AddScoped<IServicoAutenticacao, ServicoAutenticacao>();
+
+
+            // ======= Transaï¿½ï¿½o =======
+            builder.Services.AddScoped<ITransacao, TransacaoEF<RadarGovDbContext>>();
+
+            // ======= Autorizaï¿½ï¿½o =======
+            builder.Services.AddScoped<IHasher, Sha256Hasher>();
+            builder.Services.AddScoped<IRepositorioAplicacaoPermitida, RepositorioAplicacaoPermitida<RadarGovDbContext>>();
+            builder.Services.AddScoped<IServicoAplicacaoPermitidaPermissao, ServicoAplicacaoPermitidaPermissao>();
+            builder.Services.AddScoped<IServicoVerificacaoAplicacao, ServicoVerificacaoAplicacao>();
+
+
+            builder.Services.AddHttpClient<IRadarHubIntegracaoServico, RadarHubIntegracaoServico>();
+
 
 
             // Registra a classe concreta
             builder.Services.AddScoped<ServicoMensagem>();
 
-            // Ambas as interfaces usam a mesma instância
+            // Ambas as interfaces usam a mesma instï¿½ncia
             builder.Services.AddScoped<IServicoMensagem>(sp => sp.GetRequiredService<ServicoMensagem>());
             builder.Services.AddScoped<INotificador>(sp => sp.GetRequiredService<ServicoMensagem>());
 
 
-            // ======= Transação =======
-            builder.Services.AddScoped<ITransacao, TransacaoEF<RadarGovDbContext>>();
-
-
-            // ======= Serviços RSK =======
+            // ======= Serviï¿½os RSK =======
             builder.Services.AdicionarServicosRSK();
 
-            // Add services to the container.
-            builder.Services.AddControllers();
+            // ======= Controllers =======
+            builder.Services.AddControllers()
+            //.AddApplicationPart(typeof(RSK.API.Controllers.UsuarioController).Assembly)
+            .AddJsonOptions(opt =>
+            {
+                opt.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+            })
+           .AddOData(opt =>
+           {
+               opt.Select().Filter().OrderBy().Expand().Count().SetMaxTop(100);
+               opt.AddRouteComponents("api", GetEdmModel());
+           });
 
-            // Configura Quartz
-            //builder.Services.AddQuartz(q =>
-            //{
-            //    var jobKey = new JobKey("JobGetLicitacoes");
 
-            //    q.AddJob<JobGetLicitacoes>(opts => opts.WithIdentity(jobKey));
-
-            //    q.AddTrigger(opts => opts.ForJob(jobKey)
-            //        .WithIdentity("JobGetLicitacoes-trigger")
-            //        .WithCronSchedule("0/1 * * * * ?"));
-            //});
-
-            //builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
-
-            // Swagger
+            // ======= Swagger =======
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.DocumentFilter<SwaggerIgnoreAbstractControllerFilter>();
+                c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
+                // Define o esquema de seguranï¿½a Bearer
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "Insira o token JWT no campo abaixo: 'Bearer {token}'",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT"
+                });
+
+                // Aplica o Bearer a todos os endpoints
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Scheme = "bearer",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header
+                        },
+                        new List<string>()
+                    }
+                });
+            });
+
 
             var app = builder.Build();
+            //using (var scope = app.Services.CreateScope())
+            //{
+            //    var contexto = scope.ServiceProvider.GetRequiredService<RadarHubDbContext>();
+            //    Console.WriteLine($"Conexï¿½o: {contexto.Database.GetConnectionString()}");
 
-            // Configure the HTTP request pipeline.
+            //    contexto.Add(new Modalidade { IdTerceiro = "teste", Nome = "TesteDireto" });
+            //    var result = contexto.SaveChanges();
+            //    Console.WriteLine($"{result} registro(s) salvo(s)!");
+            //}
+
+
+            // ======= Middleware pipeline =======
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
@@ -135,10 +210,33 @@ namespace RadarGov.API
             }
 
             app.UseHttpsRedirection();
-            app.UseAuthorization();
-            app.MapControllers();
 
+            app.UseCors("AllowAll");            // Habilita CORS
+            app.UseAuthentication();
+            app.UseAuthorization();
+            app.UseODataRouteDebug();
+
+            app.MapControllers();
             app.Run();
         }
+
+        private static IEdmModel GetEdmModel()
+        {
+            var builder = new ODataConventionModelBuilder();
+
+            // Configuraï¿½ï¿½o manual de cada EntitySet (conjunto de entidades) para OData,
+            // conforme solicitado. ï¿½ crucial chamar .HasKey(e => e.Id) para
+            // garantir que o OData reconheï¿½a a chave primï¿½ria herdada da EntidadeBase.
+
+            // Entidades de RadarHub.Dominio.Entidades
+            //builder.EntitySet<Empresa>("Empresa").EntityType.HasKey(e => e.Id);
+            builder.EntitySet<UsuarioBase>("UsuarioBase").EntityType.HasKey(e => e.Id);
+
+            // NOTE: A classe EntidadeBaseImportacaoTerceiro nï¿½o ï¿½ registrada pois ï¿½ uma classe base
+            // e nï¿½o deve ser um EntitySet consultï¿½vel.
+
+            return builder.GetEdmModel();
+        }
+
     }
 }

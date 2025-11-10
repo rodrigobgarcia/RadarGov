@@ -62,7 +62,7 @@ namespace RadarGov.Dominio.Entidades
         // CONSTRUTORES
         // ==========================================================
 
-        public Empresa(string nome, string tenantId, string cnpj, string email)
+        public Empresa(string nome, string cnpj, string email)
         {
             this.Nome = nome;
             this.Email = email;

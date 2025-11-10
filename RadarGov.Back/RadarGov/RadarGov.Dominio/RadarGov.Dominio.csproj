@@ -11,8 +11,4 @@
     <ProjectReference Include="..\RadarGov.Integracoes\RadarGov.Integracoes.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
-
 </Project>

@@ -10,6 +10,11 @@
   <ItemGroup>
     <PackageReference Include="Google.Cloud.AIPlatform.V1" Version="3.53.0" />
     <PackageReference Include="Google.GenAI" Version="0.3.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\RSK\RSK.Dominio\RSK.Dominio.csproj" />
   </ItemGroup>
 
 </Project>

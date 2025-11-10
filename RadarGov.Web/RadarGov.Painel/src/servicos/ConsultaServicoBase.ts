@@ -1,4 +1,4 @@
-import { EntidadeBase } from "@/dtos/EntidadeBase";
+import { EntidadeBase, RetornoOData } from "@/dtos/EntidadeBase";
 import http from "./http-common";
 import { AxiosResponse } from "axios";
 
@@ -20,15 +20,15 @@ export abstract class ConsultaServicoBase<TEntity extends EntidadeBase> {
    * Retorna todos os registros da entidade. (GET /api/{nomeBaseDaRota})
    */
   public async obterTodos(): Promise<AxiosResponse<TEntity[]>> {
-    return http.get<TEntity[]>(`/${this.baseUrl}`);
+    return http.get<TEntity[]>(`/${this.baseUrl}/GetAll`);
   }
 
   /**
    * Retorna os dados da entidade com suporte a OData. (GET /api/{nomeBaseDaRota}/OData)
    * A URL de requisição deve incluir a query OData (ex: /OData?$filter=...)
    */
-  public async obterOData(query: string = ""): Promise<AxiosResponse<TEntity[]>> {
-    return http.get<TEntity[]>(`/${this.baseUrl}/OData${query}`);
+  public async obterOData(query: string = ""): Promise<AxiosResponse<RetornoOData<TEntity>>> {
+    return http.get<RetornoOData<TEntity>>(`/${this.baseUrl}${query}`);
   }
 
   /**
