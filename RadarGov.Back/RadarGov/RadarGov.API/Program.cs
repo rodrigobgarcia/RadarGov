@@ -84,7 +84,6 @@ namespace RadarGov.API
 
             // ======= Servi�os de dom�nio =======
             builder.Services.AddScoped<EmpresaServico>();
-            builder.Services.AddScoped<LicitacaoRecomendacaoServico>();
 
 
             // ======= Agendamentos ========
@@ -123,7 +122,17 @@ namespace RadarGov.API
             builder.Services.AddScoped<IServicoVerificacaoAplicacao, ServicoVerificacaoAplicacao>();
 
 
-            builder.Services.AddHttpClient<IRadarHubIntegracaoServico, RadarHubIntegracaoServico>();
+            builder.Services.AddHttpClient<IRadarHubIntegracaoServico, RadarHubClient>(client =>
+            {
+                client.Timeout = TimeSpan.FromSeconds(30);
+                client.DefaultRequestHeaders.Add("User-Agent", "RadarHubClient/1.0");
+            });
+
+            builder.Services.AddScoped<
+                IRepositorioBaseAssincrono<AplicacaoPermitida>,
+                RepositorioBaseRadarGov<AplicacaoPermitida>
+            >();
+
 
 
 
@@ -200,6 +209,8 @@ namespace RadarGov.API
             //    var result = contexto.SaveChanges();
             //    Console.WriteLine($"{result} registro(s) salvo(s)!");
             //}
+           
+
 
 
             // ======= Middleware pipeline =======
@@ -219,6 +230,7 @@ namespace RadarGov.API
             app.MapControllers();
             app.Run();
         }
+
 
         private static IEdmModel GetEdmModel()
         {

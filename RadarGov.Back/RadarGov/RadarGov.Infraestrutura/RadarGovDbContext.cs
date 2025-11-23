@@ -9,7 +9,10 @@ public partial class RadarGovDbContext : DbContext
     public DbSet<Empresa> Empresas { get; set; }
     public DbSet<UsuarioBase> UsuarioBase { get; set; }
     public DbSet<Licitacao> Licitacao { get; set; }
-    
+    public DbSet<AplicacaoIntegrada> AplicacaoIntegrada { get; set; }
+    public DbSet<AplicacaoPermitida> AplicacoesPermitidas { get; set; }
+
+
     public RadarGovDbContext()
     {
     }

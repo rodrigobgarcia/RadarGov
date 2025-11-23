@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from './views/Home.vue'
 import Empresa from './views/Empresa.vue'
-import Licitacao from './views/Licitacao.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -10,11 +9,6 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: Home
-    },
-    {
-      path: '/licitacoes',
-      name: 'licitacoes',
-      component: Licitacao
     },
     {
       path: '/empresas',

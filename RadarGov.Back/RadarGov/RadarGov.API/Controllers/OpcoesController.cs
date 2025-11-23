@@ -1,16 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.OData.Query;
-using Microsoft.AspNetCore.OData.Routing.Controllers;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Linq;
-using RadarGov.Dominio.DTOs;
 using RadarGov.Dominio.Interfaces;
 
 namespace RadarGov.API.Controllers
 {
+    [ApiController]
     [Route("api/[controller]")]
-    public class OpcoesController : ODataController
+    public class OpcoesController : ControllerBase
     {
         private readonly IRadarHubIntegracaoServico _radarHubServico;
 
@@ -19,36 +14,76 @@ namespace RadarGov.API.Controllers
             _radarHubServico = radarHubServico;
         }
 
+
         [HttpGet("modalidades")]
-        [EnableQuery]
-        public async Task<IQueryable<ModalidadeDto>> GetModalidades()
+        public async Task<IActionResult> GetModalidades([FromQuery] string odata = "")
         {
-            var modalidades = await _radarHubServico.ObterModalidades();
-            return modalidades.AsQueryable();
+            var modalidades = await _radarHubServico.ObterModalidadesAsync(odata);
+            return Ok(modalidades);
         }
+
 
         [HttpGet("orgaos")]
-        [EnableQuery]
-        public async Task<IQueryable<OrgaoDto>> GetOrgaos()
+        public async Task<IActionResult> GetOrgaos([FromQuery] string odata = "")
         {
-            var orgaos = await _radarHubServico.ObterOrgaos();
-            return orgaos.AsQueryable();
+            var orgaos = await _radarHubServico.ObterOrgaosAsync(odata);
+            return Ok(orgaos);
         }
+
 
         [HttpGet("municipios")]
-        [EnableQuery]
-        public async Task<IQueryable<MunicipioDto>> GetMunicipios([FromQuery] string uf = null)
+        public async Task<IActionResult> GetMunicipios([FromQuery] string odata = "")
         {
-            var municipios = await _radarHubServico.ObterMunicipios(uf);
-            return municipios.AsQueryable();
+            var municipios = await _radarHubServico.ObterMunicipiosAsync(odata);
+            return Ok(municipios);
         }
 
+
         [HttpGet("ufs")]
-        [EnableQuery]
-        public async Task<IQueryable<UfDto>> GetUfs()
+        public async Task<IActionResult> GetUfs([FromQuery] string odata = "")
         {
-            var ufs = await _radarHubServico.ObterUfs();
-            return ufs.AsQueryable();
+            var ufs = await _radarHubServico.ObterUfsAsync(odata);
+            return Ok(ufs);
+        }
+
+
+        [HttpGet("segmentos")]
+        public async Task<IActionResult> GetSegmentos([FromQuery] string odata = "")
+        {
+            var segmentos = await _radarHubServico.ObterSegmentoAsync(odata);
+            return Ok(segmentos);
+        }
+
+
+        [HttpGet("tipos-margem-preferencia")]
+        public async Task<IActionResult> GetTiposMargemPreferencia([FromQuery] string odata = "")
+        {
+            var tipos = await _radarHubServico.ObterTipoMargemPreferenciaAsync(odata);
+            return Ok(tipos);
+        }
+
+
+        [HttpGet("poderes")]
+        public async Task<IActionResult> GetPoderes([FromQuery] string odata = "")
+        {
+            var poderes = await _radarHubServico.ObterPoderAsync(odata);
+            return Ok(poderes);
+        }
+
+
+        [HttpGet("unidades")]
+        public async Task<IActionResult> GetUnidades([FromQuery] string odata = "")
+        {
+            var unidades = await _radarHubServico.ObterUnidadeAsync(odata);
+            return Ok(unidades);
+        }
+
+
+        [HttpGet("tipos")]
+        public async Task<IActionResult> GetTipos([FromQuery] string odata = "")
+        {
+            var tipos = await _radarHubServico.ObterTipoAsync(odata);
+            return Ok(tipos);
         }
     }
 }
